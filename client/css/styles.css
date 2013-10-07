@@ -1,0 +1,36 @@
+body {
+	background-color: #333F48;
+}
+
+#login-box {
+	background: #FFF;
+	margin: 0 auto;
+	width: 400px;
+	margin-top: 20px;
+	border: solid 3px #262F35;
+}
+
+#login-box form{
+	padding: 20px;
+}
+
+#login-header {
+	height: 80px;
+	background-color: #516473;
+	text-align: center;
+}
+
+@media screen and ( max-width: 500px ) {
+
+	#login-box {
+		width: 80%;
+	}
+
+}
+
+@media screen and ( max-width: 350px ) {
+	#login-box button {
+		width: 100%;
+		margin-bottom: 5px;
+	}
+}
