@@ -8,23 +8,26 @@ using System.Net.Http;
 using System.Web.Http;
 using Warehouse_catalog.Lib_Primavera.Model;
 
-
 namespace Warehouse_catalog.Controllers
 {
-    public class ArmazensController : ApiController
+    public class ArtigosController : ApiController
     {
         //
-        // GET: /Armazens/
+        // GET: /Artigos/
+        // Na pesquisa por id substituir o "." por "_" 
 
-        public IEnumerable<Lib_Primavera.Model.Armazem> Get()
+
+        public IEnumerable<Lib_Primavera.Model.Artigo> Get()
         {
-            return Lib_Primavera.Comercial.ListaArmazens();
+            return Lib_Primavera.Comercial.ListaArtigos();
         }
 
-        public Armazem Get(string id)
+        public Artigo Get(string id)
         {
-            Lib_Primavera.Model.Armazem armazem = Lib_Primavera.Comercial.GetArmazem(id);
-            if (armazem == null)
+            id = id.Replace("_", ".");
+
+            Lib_Primavera.Model.Artigo artigo = Lib_Primavera.Comercial.GetArtigo(id);
+            if (artigo == null)
             {
                 throw new HttpResponseException(
                         Request.CreateResponse(HttpStatusCode.NotFound));
@@ -32,7 +35,7 @@ namespace Warehouse_catalog.Controllers
             }
             else
             {
-                return armazem;
+                return artigo;
             }
         }
 
