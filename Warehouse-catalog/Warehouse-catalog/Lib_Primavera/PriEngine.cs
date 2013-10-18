@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web;
 using System.Text;
 using System.Threading.Tasks;
 using Interop.ErpBS800;         // Use Primavera interop's [Path em C:\Program Files\Common Files\PRIMAVERA\SG800]
@@ -9,61 +10,57 @@ using Interop.StdBE800;
 using ADODB;
 using Interop.IGcpBS800;
 
-
-namespace FirstREST.Lib_Primavera
+namespace Warehouse_catalog.Lib_Primavera
 {
     public class PriEngine
     {
- 
         public static StdPlatBS Platform { get; set; }
         public static ErpBS Engine { get; set; }
-     
+
         public static bool InitializeCompany(string Company, string User, string Password)
         {
 
-                StdBSConfApl objAplConf = new StdBSConfApl();
-                StdPlatBS Plataforma = new StdPlatBS();
-                ErpBS MotorLE = new ErpBS();
+            StdBSConfApl objAplConf = new StdBSConfApl();
+            StdPlatBS Plataforma = new StdPlatBS();
+            ErpBS MotorLE = new ErpBS();
 
-                EnumTipoPlataforma objTipoPlataforma = new EnumTipoPlataforma();
-                objTipoPlataforma = EnumTipoPlataforma.tpProfissional;
+            EnumTipoPlataforma objTipoPlataforma = new EnumTipoPlataforma();
+            objTipoPlataforma = EnumTipoPlataforma.tpProfissional;
 
-                objAplConf.Instancia = "Default";
-                objAplConf.AbvtApl = "GCP";
-                objAplConf.Utilizador = User;
-                objAplConf.PwdUtilizador = Password;
-                
+            objAplConf.Instancia = "Default";
+            objAplConf.AbvtApl = "GCP";
+            objAplConf.Utilizador = User;
+            objAplConf.PwdUtilizador = Password;
 
-                StdBETransaccao objStdTransac = new StdBETransaccao();
 
-                // Opem platform.
-                Plataforma.AbrePlataformaEmpresaIntegrador(ref Company, ref objStdTransac, ref objAplConf, ref objTipoPlataforma);
+            StdBETransaccao objStdTransac = new StdBETransaccao();
 
-                // Is plt initialized?
-                if (Plataforma.Inicializada)
-                {
+            // Opem platform.
+            Plataforma.AbrePlataformaEmpresaIntegrador(ref Company, ref objStdTransac, ref objAplConf, ref objTipoPlataforma);
 
-                    // Retuns the ptl.
-                    Platform = Plataforma;
+            // Is plt initialized?
+            if (Plataforma.Inicializada)
+            {
 
-                    bool blnModoPrimario = true;
+                // Retuns the ptl.
+                Platform = Plataforma;
 
-                    // Open Engine
-                    MotorLE.AbreEmpresaTrabalho(EnumTipoPlataforma.tpProfissional, ref Company, ref User, ref Password, ref objStdTransac, "Default", ref blnModoPrimario);
+                bool blnModoPrimario = true;
 
-                    // Returns the engine.
-                    Engine = MotorLE;
+                // Open Engine
+                MotorLE.AbreEmpresaTrabalho(EnumTipoPlataforma.tpProfissional, ref Company, ref User, ref Password, ref objStdTransac, "Default", ref blnModoPrimario);
 
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                // Returns the engine.
+                Engine = MotorLE;
 
-        
+                return true;
+            }
+            else
+            {
+                return false;
             }
 
+
         }
-    
+    }
 }

@@ -39,6 +39,91 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ADODB, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\..\..\Primavera_DLLs\ADODB.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.AdmBE800">
+      <HintPath>..\..\..\..\..\..\..\Primavera_DLLs\Interop.AdmBE800.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.AdmBS800">
+      <HintPath>..\..\..\..\..\..\..\Primavera_DLLs\Interop.AdmBS800.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.BasBE800">
+      <HintPath>..\..\..\..\..\..\..\Primavera_DLLs\Interop.BasBE800.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.CblBE800">
+      <HintPath>..\..\..\..\..\..\..\Primavera_DLLs\Interop.CblBE800.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.EapBE800">
+      <HintPath>..\..\..\..\..\..\..\Primavera_DLLs\Interop.EapBE800.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.ErpBS800">
+      <HintPath>..\..\..\..\..\..\..\Primavera_DLLs\Interop.ErpBS800.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.FacBE800">
+      <HintPath>..\..\..\..\..\..\..\Primavera_DLLs\Interop.FacBE800.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.GcpBE800">
+      <HintPath>..\..\..\..\..\..\..\Primavera_DLLs\Interop.GcpBE800.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.IBasBS800">
+      <HintPath>..\..\..\..\..\..\..\Primavera_DLLs\Interop.IBasBS800.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.ICblBS800">
+      <HintPath>..\..\..\..\..\..\..\Primavera_DLLs\Interop.ICblBS800.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.IEapBS800">
+      <HintPath>..\..\..\..\..\..\..\Primavera_DLLs\Interop.IEapBS800.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.IFacBS800">
+      <HintPath>..\..\..\..\..\..\..\Primavera_DLLs\Interop.IFacBS800.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.IGcpBS800">
+      <HintPath>..\..\..\..\..\..\..\Primavera_DLLs\Interop.IGcpBS800.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.IRhpBS800">
+      <HintPath>..\..\..\..\..\..\..\Primavera_DLLs\Interop.IRhpBS800.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.Primavera.BusinessData.ERPEngine800">
+      <HintPath>..\..\..\..\..\..\..\Primavera_DLLs\Interop.Primavera.BusinessData.ERPEngine800.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.Primavera.Platform.Caching800">
+      <HintPath>..\..\..\..\..\..\..\Primavera_DLLs\Interop.Primavera.Platform.Caching800.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.RhpBE800">
+      <HintPath>..\..\..\..\..\..\..\Primavera_DLLs\Interop.RhpBE800.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.StdBE800">
+      <HintPath>..\..\..\..\..\..\..\Primavera_DLLs\Interop.StdBE800.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.StdPlatBE800">
+      <HintPath>..\..\..\..\..\..\..\Primavera_DLLs\Interop.StdPlatBE800.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.StdPlatBS800">
+      <HintPath>..\..\..\..\..\..\..\Primavera_DLLs\Interop.StdPlatBS800.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -160,11 +245,16 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\ArmazensController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Lib_Primavera\Comercial.cs" />
+    <Compile Include="Lib_Primavera\Model\Armazem.cs" />
+    <Compile Include="Lib_Primavera\MotorPrimavera.cs" />
+    <Compile Include="Lib_Primavera\PriEngine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
