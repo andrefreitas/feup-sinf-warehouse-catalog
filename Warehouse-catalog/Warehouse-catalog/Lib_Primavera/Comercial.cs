@@ -161,5 +161,75 @@ namespace Warehouse_catalog.Lib_Primavera
 
 
         #endregion Artigo
+
+        #region ArtigoArmazem
+
+        public static List<Model.ArtigoArmazem> ListaArtigosArmazens()
+        {
+            ErpBS objMotor = new ErpBS();
+            StdBELista objList;
+
+            Model.ArtigoArmazem artigo_armazem = new Model.ArtigoArmazem();
+            List<Model.ArtigoArmazem> listArtigosArmazens = new List<Model.ArtigoArmazem>();
+
+            if (PriEngine.InitializeCompany("BELAFLOR", "admin", "admin") == true)
+            {
+
+                //objList = PriEngine.Engine.Comercial.Artigos.LstArtigos();
+
+                objList = PriEngine.Engine.Consulta("SELECT Artigo, Armazem, Lote, StkActual FROM  ARTIGOARMAZEM");
+
+                while (!objList.NoFim())
+                {
+                    artigo_armazem = new Model.ArtigoArmazem();
+                    artigo_armazem.Artigo = objList.Valor("Artigo");
+                    artigo_armazem.Armazem = objList.Valor("Armazem");
+                    artigo_armazem.Lote = objList.Valor("Lote");
+                    artigo_armazem.StockAtual = objList.Valor("StkActual");
+
+                    listArtigosArmazens.Add(artigo_armazem);
+                    objList.Seguinte();
+                }
+
+                return listArtigosArmazens;
+            }
+            else
+                return null;
+        }
+
+        public static List<Model.ArtigoArmazem> GetArtigosPorArmazem(string codArmazem)
+        {
+            ErpBS objMotor = new ErpBS();
+            StdBELista objList;
+
+            Model.ArtigoArmazem artigo_armazem = new Model.ArtigoArmazem();
+            List<Model.ArtigoArmazem> listArtigosArmazens = new List<Model.ArtigoArmazem>();
+
+            if (PriEngine.InitializeCompany("BELAFLOR", "admin", "admin") == true)
+            {
+
+                //objList = PriEngine.Engine.Comercial.Artigos.LstArtigos();
+
+                objList = PriEngine.Engine.Consulta("SELECT Artigo, Armazem, Lote, StkActual FROM  ARTIGOARMAZEM WHERE Armazem = 'A1'");
+
+                while (!objList.NoFim())
+                {
+                    artigo_armazem = new Model.ArtigoArmazem();
+                    artigo_armazem.Artigo = objList.Valor("Artigo");
+                    artigo_armazem.Armazem = objList.Valor("Armazem");
+                    artigo_armazem.Lote = objList.Valor("Lote");
+                    artigo_armazem.StockAtual = objList.Valor("StkActual");
+
+                    listArtigosArmazens.Add(artigo_armazem);
+                    objList.Seguinte();
+                }
+
+                return listArtigosArmazens;
+            }
+            else
+                return null;
+        }
+
+        #endregion ArtigoArmazem
     }
 }
