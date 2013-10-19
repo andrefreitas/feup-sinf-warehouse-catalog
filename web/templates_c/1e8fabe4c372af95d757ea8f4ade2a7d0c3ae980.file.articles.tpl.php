@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2013-10-19 18:30:24
+<?php /* Smarty version Smarty-3.1.15, created on 2013-10-19 20:45:29
          compiled from "..\templates\articles.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:42985262cca61ad4a1-48339209%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '1e8fabe4c372af95d757ea8f4ade2a7d0c3ae980' => 
     array (
       0 => '..\\templates\\articles.tpl',
-      1 => 1382207415,
+      1 => 1382215525,
       2 => 'file',
     ),
   ),
@@ -30,7 +30,22 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
   </head>
   <body>
-    <div id="top-bar"
+    <!-- Top bar -->
+    <div id="top-bar">
+      <div class="container">
+        <img src="images/logo.svg" id="logo" height="100">
+      </div>
+    </div>
+    <!-- Content -->
+    <div class="container">
+      <!-- Filter -->
+      <div class="box" id="filter">
+        <div class="icon">
+          <img src="images/icons/settings.svg" width="33" height="33">
+        </div>
+      </div>
+      
+    </div>
 
   </body>
 </html><?php }} ?>

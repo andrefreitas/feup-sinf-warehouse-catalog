@@ -9,7 +9,22 @@
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
   </head>
   <body>
-    <div id="top-bar"
+    <!-- Top bar -->
+    <div id="top-bar">
+      <div class="container">
+        <img src="images/logo.svg" id="logo" height="100">
+      </div>
+    </div>
+    <!-- Content -->
+    <div class="container">
+      <!-- Filter -->
+      <div class="box" id="filter">
+        <div class="icon">
+          <img src="images/icons/settings.svg" width="33" height="33">
+        </div>
+      </div>
+      
+    </div>
 
   </body>
 </html>
