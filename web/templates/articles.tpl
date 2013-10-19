@@ -30,8 +30,9 @@
           Armazém:
           <select>
             <option selected="selected">Qualquer um</option>
-              <option>Paranhos</option>
-              <option>Gaia</option>
+            {foreach from=$warehouses item=warehouse}
+              <option value="{$warehouse.code}">{$warehouse.name}</option>
+            {/foreach}
           </select>
         </div>
       </div>

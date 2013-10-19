@@ -21,8 +21,13 @@
               "pvp" => "3,22"
             )
     	);
-
+    $warehouses = array(
+        array("name" => "Paranhos", "code" => "h4Sjfigh"),
+        array("name" => "Gaia", "code" => "fgfggff"),
+        array("name" => "Matosinhos", "code" => "m23f34")
+        );
     // Template
+    $smarty->assign("warehouses", $warehouses);
     $smarty->assign("articles", $articles);
     $smarty->display("articles.tpl");
 ?>
