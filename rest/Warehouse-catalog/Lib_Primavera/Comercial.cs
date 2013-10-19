@@ -132,8 +132,6 @@ namespace Warehouse_catalog.Lib_Primavera
             ErpBS objMotor = new ErpBS();
             GcpBEArtigo objArtigo = new GcpBEArtigo();
 
-          //  Console.Write("OLA");
-
             Model.Artigo myArtigo = new Model.Artigo();
 
             if (PriEngine.InitializeCompany("BELAFLOR", "admin", "admin") == true)
@@ -210,7 +208,7 @@ namespace Warehouse_catalog.Lib_Primavera
 
                 //objList = PriEngine.Engine.Comercial.Artigos.LstArtigos();
 
-                objList = PriEngine.Engine.Consulta("SELECT Artigo, Armazem, Lote, StkActual FROM  ARTIGOARMAZEM WHERE Armazem = 'A1'");
+                objList = PriEngine.Engine.Consulta("SELECT Artigo, Armazem, Lote, StkActual FROM  ARTIGOARMAZEM WHERE Armazem = '" + codArmazem + "'");
 
                 while (!objList.NoFim())
                 {
@@ -225,6 +223,30 @@ namespace Warehouse_catalog.Lib_Primavera
                 }
 
                 return listArtigosArmazens;
+            }
+            else
+                return null;
+        }
+
+        public static Lib_Primavera.Model.ArtigoArmazem GetArtigoArmazem(string codArtigo)
+        {
+            ErpBS objMotor = new ErpBS();
+            GcpBEArtigoArmazem objArtigo = new GcpBEArtigoArmazem();
+
+            //  Console.Write("OLA");
+
+            Model.ArtigoArmazem myArtigo = new Model.ArtigoArmazem();
+
+            if (PriEngine.InitializeCompany("BELAFLOR", "admin", "admin") == true)
+            {
+
+                myArtigo.Armazem = "A1";
+                myArtigo.Artigo = "BOUQ.0005";
+                myArtigo.Lote = "L1";
+                myArtigo.StockAtual = 30;
+
+                return myArtigo;
+ 
             }
             else
                 return null;

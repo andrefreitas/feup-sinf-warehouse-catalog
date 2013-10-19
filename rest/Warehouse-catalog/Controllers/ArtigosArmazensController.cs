@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using Warehouse_catalog.Lib_Primavera.Model;
 
 namespace Warehouse_catalog.Controllers
 {
@@ -19,9 +20,11 @@ namespace Warehouse_catalog.Controllers
             return Lib_Primavera.Comercial.ListaArtigosArmazens();
         }
 
-        public IEnumerable<Lib_Primavera.Model.ArtigoArmazem> Get(string codArmazem)
+        public IEnumerable<Lib_Primavera.Model.ArtigoArmazem> Get(string id)
         {
-            return Lib_Primavera.Comercial.GetArtigosPorArmazem(codArmazem);
+            return Lib_Primavera.Comercial.GetArtigosPorArmazem(id);
         }
+
+        
     }
 }
