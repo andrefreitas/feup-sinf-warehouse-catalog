@@ -65,6 +65,6 @@ C:\Users\user\documents\visual studio 2012\Projects\Warehouse-catalog\Warehouse-
 C:\Users\user\documents\visual studio 2012\Projects\Warehouse-catalog\Warehouse-catalog\bin\ru\System.Spatial.resources.dll
 C:\Users\user\documents\visual studio 2012\Projects\Warehouse-catalog\Warehouse-catalog\bin\zh-Hans\System.Spatial.resources.dll
 C:\Users\user\documents\visual studio 2012\Projects\Warehouse-catalog\Warehouse-catalog\bin\zh-Hant\System.Spatial.resources.dll
-C:\Users\user\documents\visual studio 2012\Projects\Warehouse-catalog\Warehouse-catalog\obj\Debug\Warehouse-catalog.csprojResolveAssemblyReference.cache
 C:\Users\user\documents\visual studio 2012\Projects\Warehouse-catalog\Warehouse-catalog\obj\Debug\Warehouse-catalog.dll
 C:\Users\user\documents\visual studio 2012\Projects\Warehouse-catalog\Warehouse-catalog\obj\Debug\Warehouse-catalog.pdb
+C:\Users\user\documents\visual studio 2012\Projects\Warehouse-catalog\Warehouse-catalog\obj\Debug\Warehouse-catalog.csprojResolveAssemblyReference.cache
