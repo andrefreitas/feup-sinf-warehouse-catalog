@@ -1,12 +1,15 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <title>Articles</title>
+    <title>Warehouse Catalog</title>
     <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/styles.css"/>
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+    <link rel="apple-touch-icon" href="images/icons/ipad-icon.png"/>
+
   </head>
   <body>
     <!-- Top bar -->

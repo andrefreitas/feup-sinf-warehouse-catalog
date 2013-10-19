@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2013-10-19 20:45:29
+<?php /* Smarty version Smarty-3.1.15, created on 2013-10-19 21:15:39
          compiled from "..\templates\articles.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:42985262cca61ad4a1-48339209%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '1e8fabe4c372af95d757ea8f4ade2a7d0c3ae980' => 
     array (
       0 => '..\\templates\\articles.tpl',
-      1 => 1382215525,
+      1 => 1382217165,
       2 => 'file',
     ),
   ),
@@ -22,12 +22,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <?php if ($_valid && !is_callable('content_5262cca638cb47_49815253')) {function content_5262cca638cb47_49815253($_smarty_tpl) {?><!DOCTYPE HTML>
 <html>
   <head>
-    <title>Articles</title>
+    <title>Warehouse Catalog</title>
     <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/styles.css"/>
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+    <link rel="apple-touch-icon" href="images/icons/ipad-icon.png"/>
+
   </head>
   <body>
     <!-- Top bar -->
