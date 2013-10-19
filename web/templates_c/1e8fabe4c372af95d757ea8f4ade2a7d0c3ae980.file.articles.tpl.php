@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2013-10-19 21:15:39
+<?php /* Smarty version Smarty-3.1.15, created on 2013-10-19 22:32:13
          compiled from "..\templates\articles.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:42985262cca61ad4a1-48339209%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '1e8fabe4c372af95d757ea8f4ade2a7d0c3ae980' => 
     array (
       0 => '..\\templates\\articles.tpl',
-      1 => 1382217165,
+      1 => 1382221932,
       2 => 'file',
     ),
   ),
@@ -17,6 +17,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'version' => 'Smarty-3.1.15',
   'unifunc' => 'content_5262cca638cb47_49815253',
+  'variables' => 
+  array (
+    'articles' => 0,
+    'article' => 0,
+  ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5262cca638cb47_49815253')) {function content_5262cca638cb47_49815253($_smarty_tpl) {?><!DOCTYPE HTML>
@@ -26,11 +31,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/styles.css"/>
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
     <link rel="apple-touch-icon" href="images/icons/ipad-icon.png"/>
-
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
   </head>
   <body>
     <!-- Top bar -->
@@ -46,8 +52,35 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <div class="icon">
           <img src="images/icons/settings.svg" width="33" height="33">
         </div>
+        <div id="parameters">
+          Armazém:
+          <select>
+            <option selected="selected">Qualquer um</option>
+              <option>Paranhos</option>
+              <option>Gaia</option>
+          </select>
+        </div>
       </div>
-      
+      <!-- Articles -->
+      <div id="articles">
+        <?php  $_smarty_tpl->tpl_vars['article'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['article']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['articles']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['article']->key => $_smarty_tpl->tpl_vars['article']->value) {
+$_smarty_tpl->tpl_vars['article']->_loop = true;
+?>
+          <div class="box article">
+            <div class="name"><?php echo $_smarty_tpl->tpl_vars['article']->value['name'];?>
+ </div>
+            <div class="pvp"><?php echo $_smarty_tpl->tpl_vars['article']->value['pvp'];?>
+€</div>
+            <div class="stock"><b>Stock</b> <?php echo $_smarty_tpl->tpl_vars['article']->value['stock'];?>
+</div>
+            <div class="warehouse"><img src="images/icons/warehouse.svg" width="40px"> <?php echo $_smarty_tpl->tpl_vars['article']->value['warehouse'];?>
+</div>
+          </div>
+        <?php } ?>
+        
+      </div>
     </div>
 
   </body>

@@ -50,6 +50,48 @@ body {
 	background: #FFF;
 }
 
+#articles{
+	padding-top: 10px;
+}
+.article {
+	margin-top: 20px;
+	font-size: 20px;
+}
+.article div{
+	float: left;
+	text-align: center;
+}
+.article .name{
+	padding: 10px 5px 10px 15px;
+}
+
+.article .warehouse{
+	padding: 6px 5px 0px 15px;
+	float: right;
+	background: #DDDDDD;
+	height: 100%;
+	min-width: 200px;
+	text-align: left;
+}
+
+.article .pvp{
+	float: right;
+	background: #008BFF;
+	width: 100px;
+	height: 100%;
+	color: #fff;
+	font-size: 22px;
+	font-weight: bold;
+	padding-top: 10px;
+}
+.article .stock{
+	width: 150px;
+	float: right;
+	height: 100%;
+	padding: 10px 10px 0 10px;
+	text-align: left;
+	background: #DDDDDD;
+}
 /* Filter */
 #filter {
 	background: #DDDDDD;
@@ -60,9 +102,38 @@ body {
 	width: 55px;
 	height: 50px;
 	padding: 10px 0 0 10px ;
+	float: left;
 }
-/* Responsive */
 
+#filter #parameters {
+	padding: 7px 10px 10px 10px;
+	float: left;
+	font-size: 20px;
+}
+#filter #parameters select {
+	padding:3px 5px 3px 5px;
+	text-align: right;
+    margin: 0;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+    -webkit-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    -moz-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    background: #f8f8f8;
+    color:#888;
+    border:none;
+    outline:none;
+    display: inline-block;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    cursor:pointer;
+}
+
+
+
+/* Responsive */
 @media screen and ( max-width: 800px ) {
 
 	.container {

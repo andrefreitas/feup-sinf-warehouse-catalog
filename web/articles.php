@@ -7,14 +7,19 @@
     	array("name" => "Alpinea Rosa",
     		  "warehouse" => "Gaia",
     		  "stock" => 242,
-    		  "pvp" => 1.40
+    		  "pvp" => "1,40"
     		 ),
 
     	array("name" => "Astromeia",
     		  "warehouse" => "Matosinhos",
     		  "stock" => 29,
-    		  "pvp" => 1.62
-    		  )
+    		  "pvp" => "1,62"
+    		  ),
+        array("name" => "Tulipa",
+              "warehouse" => "Paranhos",
+              "stock" => 64,
+              "pvp" => "3,22"
+            )
     	);
 
     // Template
