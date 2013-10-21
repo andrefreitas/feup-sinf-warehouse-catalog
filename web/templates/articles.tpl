@@ -30,7 +30,7 @@
         <div id="parameters">
           Armazém:
           <select onchange="location = 'articles.php?warehouse='+this.options[this.selectedIndex].value;">
-            <option {if $selected eq 0}selected{/if}>Qualquer um</option>
+            <option {if $selected eq 'none'}selected{/if}>Qualquer um</option>
             {foreach from=$warehouses item=warehouse}
               <option {if $selected eq $warehouse.CodArmazem}selected{/if} value="{$warehouse.CodArmazem}">{$warehouse.Descricao}</option>
             {/foreach}
