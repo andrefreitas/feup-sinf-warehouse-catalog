@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2013-10-21 12:14:40
+<?php /* Smarty version Smarty-3.1.15, created on 2013-10-21 12:43:42
          compiled from "..\templates\articles.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:158945264f48bac7b69-33844750%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '1e8fabe4c372af95d757ea8f4ade2a7d0c3ae980' => 
     array (
       0 => '..\\templates\\articles.tpl',
-      1 => 1382350477,
+      1 => 1382352217,
       2 => 'file',
     ),
   ),
@@ -19,6 +19,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'unifunc' => 'content_5264f48bb4ca58_30010217',
   'variables' => 
   array (
+    'selected' => 0,
     'warehouses' => 0,
     'warehouse' => 0,
     'articles' => 0,
@@ -32,7 +33,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 ?><!DOCTYPE HTML>
 <html>
   <head>
-    <title>Warehouse Catalog</title>
+    <title>Warehouse Catalogs</title>
     <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/styles.css"/>
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
@@ -60,14 +61,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         </div>
         <div id="parameters">
           Armazém:
-          <select>
-            <option selected="selected">Qualquer um</option>
+          <select onchange="location = 'articles.php?warehouse='+this.options[this.selectedIndex].value;">
+            <option <?php if ($_smarty_tpl->tpl_vars['selected']->value==0) {?>selected<?php }?>>Qualquer um</option>
             <?php  $_smarty_tpl->tpl_vars['warehouse'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['warehouse']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['warehouses']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['warehouse']->key => $_smarty_tpl->tpl_vars['warehouse']->value) {
 $_smarty_tpl->tpl_vars['warehouse']->_loop = true;
 ?>
-              <option value="<?php echo $_smarty_tpl->tpl_vars['warehouse']->value['CodArmazem'];?>
+              <option <?php if ($_smarty_tpl->tpl_vars['selected']->value==$_smarty_tpl->tpl_vars['warehouse']->value['CodArmazem']) {?>selected<?php }?> value="<?php echo $_smarty_tpl->tpl_vars['warehouse']->value['CodArmazem'];?>
 "><?php echo $_smarty_tpl->tpl_vars['warehouse']->value['Descricao'];?>
 </option>
             <?php } ?>

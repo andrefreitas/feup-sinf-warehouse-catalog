@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <title>Warehouse Catalog</title>
+    <title>Warehouse Catalogs</title>
     <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/styles.css"/>
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
@@ -29,10 +29,10 @@
         </div>
         <div id="parameters">
           Armazém:
-          <select>
-            <option selected="selected">Qualquer um</option>
+          <select onchange="location = 'articles.php?warehouse='+this.options[this.selectedIndex].value;">
+            <option {if $selected eq 0}selected{/if}>Qualquer um</option>
             {foreach from=$warehouses item=warehouse}
-              <option value="{$warehouse.CodArmazem}">{$warehouse.Descricao}</option>
+              <option {if $selected eq $warehouse.CodArmazem}selected{/if} value="{$warehouse.CodArmazem}">{$warehouse.Descricao}</option>
             {/foreach}
           </select>
         </div>
