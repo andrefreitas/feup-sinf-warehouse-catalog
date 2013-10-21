@@ -1,40 +1,35 @@
-<<<<<<< HEAD
-<?php /* Smarty version Smarty-3.1.15, created on 2013-10-21 11:11:59
-=======
-<?php /* Smarty version Smarty-3.1.15, created on 2013-10-19 22:50:48
->>>>>>> 1327f088a664aad1bbb79f625688ecf983ac5247
+<?php /* Smarty version Smarty-3.1.15, created on 2013-10-21 12:14:40
          compiled from "..\templates\articles.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:42985262cca61ad4a1-48339209%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:158945264f48bac7b69-33844750%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '1e8fabe4c372af95d757ea8f4ade2a7d0c3ae980' => 
     array (
       0 => '..\\templates\\articles.tpl',
-<<<<<<< HEAD
-      1 => 1382346716,
-=======
-      1 => 1382223046,
->>>>>>> 1327f088a664aad1bbb79f625688ecf983ac5247
+      1 => 1382350477,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '42985262cca61ad4a1-48339209',
+  'nocache_hash' => '158945264f48bac7b69-33844750',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_5262cca638cb47_49815253',
+  'unifunc' => 'content_5264f48bb4ca58_30010217',
   'variables' => 
   array (
     'warehouses' => 0,
     'warehouse' => 0,
     'articles' => 0,
+    'products' => 0,
+    'product' => 0,
     'article' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5262cca638cb47_49815253')) {function content_5262cca638cb47_49815253($_smarty_tpl) {?><!DOCTYPE HTML>
+<?php if ($_valid && !is_callable('content_5264f48bb4ca58_30010217')) {function content_5264f48bb4ca58_30010217($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include 'C:\\git\\sinf-warehouse-catalog\\web\\lib\\smarty\\plugins\\modifier.truncate.php';
+?><!DOCTYPE HTML>
 <html>
   <head>
     <title>Warehouse Catalog</title>
@@ -72,8 +67,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 foreach ($_from as $_smarty_tpl->tpl_vars['warehouse']->key => $_smarty_tpl->tpl_vars['warehouse']->value) {
 $_smarty_tpl->tpl_vars['warehouse']->_loop = true;
 ?>
-              <option value="<?php echo $_smarty_tpl->tpl_vars['warehouse']->value['code'];?>
-"><?php echo $_smarty_tpl->tpl_vars['warehouse']->value['name'];?>
+              <option value="<?php echo $_smarty_tpl->tpl_vars['warehouse']->value['CodArmazem'];?>
+"><?php echo $_smarty_tpl->tpl_vars['warehouse']->value['Descricao'];?>
 </option>
             <?php } ?>
           </select>
@@ -87,13 +82,26 @@ foreach ($_from as $_smarty_tpl->tpl_vars['article']->key => $_smarty_tpl->tpl_v
 $_smarty_tpl->tpl_vars['article']->_loop = true;
 ?>
           <div class="box article">
-            <div class="name"><?php echo $_smarty_tpl->tpl_vars['article']->value['Artigo'];?>
- </div>
-            <div class="pvp">undefined €</div>
+            <div class="name"><?php  $_smarty_tpl->tpl_vars['product'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['product']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['products']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['product']->key => $_smarty_tpl->tpl_vars['product']->value) {
+$_smarty_tpl->tpl_vars['product']->_loop = true;
+?><?php if ($_smarty_tpl->tpl_vars['product']->value['CodArtigo']==$_smarty_tpl->tpl_vars['article']->value['Artigo']) {?><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['product']->value['Descricao'],25);?>
+<?php }?><?php } ?></div>
+            <div class="pvp"><?php  $_smarty_tpl->tpl_vars['product'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['product']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['products']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['product']->key => $_smarty_tpl->tpl_vars['product']->value) {
+$_smarty_tpl->tpl_vars['product']->_loop = true;
+?><?php if ($_smarty_tpl->tpl_vars['product']->value['CodArtigo']==$_smarty_tpl->tpl_vars['article']->value['Artigo']) {?><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['product']->value['Preco'],25);?>
+<?php }?><?php } ?> €</div>
             <div class="stock"><b>Stock</b> <?php echo $_smarty_tpl->tpl_vars['article']->value['StockAtual'];?>
 </div>
-            <div class="warehouse"><img src="images/icons/warehouse.svg" width="40px"> <?php echo $_smarty_tpl->tpl_vars['article']->value['Armazem'];?>
-</div>
+            <div class="warehouse"><img src="images/icons/warehouse.svg" width="40px"><?php  $_smarty_tpl->tpl_vars['warehouse'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['warehouse']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['warehouses']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['warehouse']->key => $_smarty_tpl->tpl_vars['warehouse']->value) {
+$_smarty_tpl->tpl_vars['warehouse']->_loop = true;
+?><?php if ($_smarty_tpl->tpl_vars['warehouse']->value['CodArmazem']==$_smarty_tpl->tpl_vars['article']->value['Armazem']) {?><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['warehouse']->value['Descricao'],15);?>
+<?php }?><?php } ?></div>
           </div>
         <?php } ?>
       </div>
