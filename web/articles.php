@@ -23,5 +23,7 @@ if (isset($decoded->response->status) && $decoded->response->status == 'ERROR') 
     $warehouses = array();
     // Template
     $smarty->assign("articles", $decoded);
+    // Template
+    $smarty->assign("warehouses", $warehouses);
     $smarty->display("articles.tpl");
 ?>

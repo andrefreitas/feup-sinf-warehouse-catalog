@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php /* Smarty version Smarty-3.1.15, created on 2013-10-21 11:11:59
+=======
+<?php /* Smarty version Smarty-3.1.15, created on 2013-10-19 22:50:48
+>>>>>>> 1327f088a664aad1bbb79f625688ecf983ac5247
          compiled from "..\templates\articles.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:42985262cca61ad4a1-48339209%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +11,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '1e8fabe4c372af95d757ea8f4ade2a7d0c3ae980' => 
     array (
       0 => '..\\templates\\articles.tpl',
+<<<<<<< HEAD
       1 => 1382346716,
+=======
+      1 => 1382223046,
+>>>>>>> 1327f088a664aad1bbb79f625688ecf983ac5247
       2 => 'file',
     ),
   ),
@@ -19,6 +27,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'unifunc' => 'content_5262cca638cb47_49815253',
   'variables' => 
   array (
+    'warehouses' => 0,
+    'warehouse' => 0,
     'articles' => 0,
     'article' => 0,
   ),
@@ -57,8 +67,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
           Armazém:
           <select>
             <option selected="selected">Qualquer um</option>
-              <option>Paranhos</option>
-              <option>Gaia</option>
+            <?php  $_smarty_tpl->tpl_vars['warehouse'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['warehouse']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['warehouses']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['warehouse']->key => $_smarty_tpl->tpl_vars['warehouse']->value) {
+$_smarty_tpl->tpl_vars['warehouse']->_loop = true;
+?>
+              <option value="<?php echo $_smarty_tpl->tpl_vars['warehouse']->value['code'];?>
+"><?php echo $_smarty_tpl->tpl_vars['warehouse']->value['name'];?>
+</option>
+            <?php } ?>
           </select>
         </div>
       </div>
