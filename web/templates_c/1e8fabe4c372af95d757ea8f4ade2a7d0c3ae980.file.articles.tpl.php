@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2013-10-19 22:32:13
+<?php /* Smarty version Smarty-3.1.15, created on 2013-10-21 11:11:59
          compiled from "..\templates\articles.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:42985262cca61ad4a1-48339209%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '1e8fabe4c372af95d757ea8f4ade2a7d0c3ae980' => 
     array (
       0 => '..\\templates\\articles.tpl',
-      1 => 1382221932,
+      1 => 1382346716,
       2 => 'file',
     ),
   ),
@@ -30,6 +30,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <title>Warehouse Catalog</title>
     <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -69,17 +70,15 @@ foreach ($_from as $_smarty_tpl->tpl_vars['article']->key => $_smarty_tpl->tpl_v
 $_smarty_tpl->tpl_vars['article']->_loop = true;
 ?>
           <div class="box article">
-            <div class="name"><?php echo $_smarty_tpl->tpl_vars['article']->value['name'];?>
+            <div class="name"><?php echo $_smarty_tpl->tpl_vars['article']->value['Artigo'];?>
  </div>
-            <div class="pvp"><?php echo $_smarty_tpl->tpl_vars['article']->value['pvp'];?>
-€</div>
-            <div class="stock"><b>Stock</b> <?php echo $_smarty_tpl->tpl_vars['article']->value['stock'];?>
+            <div class="pvp">undefined €</div>
+            <div class="stock"><b>Stock</b> <?php echo $_smarty_tpl->tpl_vars['article']->value['StockAtual'];?>
 </div>
-            <div class="warehouse"><img src="images/icons/warehouse.svg" width="40px"> <?php echo $_smarty_tpl->tpl_vars['article']->value['warehouse'];?>
+            <div class="warehouse"><img src="images/icons/warehouse.svg" width="40px"> <?php echo $_smarty_tpl->tpl_vars['article']->value['Armazem'];?>
 </div>
           </div>
         <?php } ?>
-        
       </div>
     </div>
 

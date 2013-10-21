@@ -66,3 +66,39 @@ C:\Users\user\documents\visual studio 2012\Projects\Warehouse-catalog\Warehouse-
 C:\Users\user\documents\visual studio 2012\Projects\Warehouse-catalog\Warehouse-catalog.Tests\obj\Debug\Warehouse-catalog.Tests.csprojResolveAssemblyReference.cache
 C:\Users\user\documents\visual studio 2012\Projects\Warehouse-catalog\Warehouse-catalog.Tests\obj\Debug\Warehouse-catalog.Tests.dll
 C:\Users\user\documents\visual studio 2012\Projects\Warehouse-catalog\Warehouse-catalog.Tests\obj\Debug\Warehouse-catalog.Tests.pdb
+C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog.Tests\bin\Debug\Warehouse-catalog.Tests.dll.config
+C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog.Tests\bin\Debug\Warehouse-catalog.Tests.dll
+C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog.Tests\bin\Debug\Warehouse-catalog.Tests.pdb
+C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog.Tests\bin\Debug\Microsoft.Data.Edm.dll
+C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog.Tests\bin\Debug\Microsoft.Data.OData.dll
+C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog.Tests\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog.Tests\bin\Debug\System.Net.Http.Formatting.dll
+C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog.Tests\bin\Debug\System.Spatial.dll
+C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog.Tests\bin\Debug\System.Web.Helpers.dll
+C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog.Tests\bin\Debug\System.Web.Http.dll
+C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog.Tests\bin\Debug\System.Web.Http.WebHost.dll
+C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog.Tests\bin\Debug\System.Web.Mvc.dll
+C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog.Tests\bin\Debug\System.Web.Razor.dll
+C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog.Tests\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog.Tests\bin\Debug\System.Web.WebPages.dll
+C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog.Tests\bin\Debug\System.Web.WebPages.Razor.dll
+C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog.Tests\bin\Debug\Warehouse-catalog.dll
+C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog.Tests\bin\Debug\System.Web.Optimization.dll
+C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog.Tests\bin\Debug\System.Web.Http.Tracing.dll
+C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog.Tests\bin\Debug\Warehouse-catalog.pdb
+C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog.Tests\bin\Debug\Microsoft.Web.Infrastructure.xml
+C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog.Tests\bin\Debug\Newtonsoft.Json.xml
+C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog.Tests\bin\Debug\System.Net.Http.Formatting.xml
+C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog.Tests\bin\Debug\System.Web.Helpers.xml
+C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog.Tests\bin\Debug\System.Web.Http.xml
+C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog.Tests\bin\Debug\System.Web.Http.WebHost.xml
+C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog.Tests\bin\Debug\System.Web.Mvc.xml
+C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog.Tests\bin\Debug\System.Web.Razor.xml
+C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog.Tests\bin\Debug\System.Web.WebPages.xml
+C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog.Tests\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog.Tests\bin\Debug\System.Web.WebPages.Razor.xml
+C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog.Tests\bin\Debug\System.Web.Http.OData.xml
+C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog.Tests\bin\Debug\System.Web.Http.Tracing.xml
+C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog.Tests\obj\Debug\Warehouse-catalog.Tests.csprojResolveAssemblyReference.cache
+C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog.Tests\obj\Debug\Warehouse-catalog.Tests.dll
+C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog.Tests\obj\Debug\Warehouse-catalog.Tests.pdb

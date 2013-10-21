@@ -4,6 +4,7 @@
     <title>Warehouse Catalog</title>
     <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -37,15 +38,14 @@
       </div>
       <!-- Articles -->
       <div id="articles">
-        {foreach from=$articles item=article}
+        {foreach $articles as $article}
           <div class="box article">
-            <div class="name">{$article.name} </div>
-            <div class="pvp">{$article.pvp}€</div>
-            <div class="stock"><b>Stock</b> {$article.stock}</div>
-            <div class="warehouse"><img src="images/icons/warehouse.svg" width="40px"> {$article.warehouse}</div>
+            <div class="name">{$article.Artigo} </div>
+            <div class="pvp">undefined €</div>
+            <div class="stock"><b>Stock</b> {$article.StockAtual}</div>
+            <div class="warehouse"><img src="images/icons/warehouse.svg" width="40px"> {$article.Armazem}</div>
           </div>
         {/foreach}
-        
       </div>
     </div>
 
