@@ -36,5 +36,23 @@ namespace Warehouse_catalog.Lib_Primavera.Model
             get;
             set;
         }
+
+        public string Imagem
+        {
+            get;
+            set;
+        }
+
+        public double StkAtual
+        {
+            get;
+            set;
+        }
+
+        public string DescricaoImg
+        {
+            get;
+            set;
+        }
     }
 }

@@ -41,8 +41,21 @@ namespace Warehouse_catalog.Lib_Primavera
                     armazem.CodPostalLocalidade = objList.Valor("CpLocalidade");
                     armazem.Telefone = objList.Valor("Telefone");
                     armazem.Fax = objList.Valor("Fax");
-                    armazem.Distrito = objList.Valor("Distrito");
                     armazem.Pais = objList.Valor("Pais");
+
+                    string codDistr = objList.Valor("Distrito");
+
+                    StdBELista lstDistr = PriEngine.Engine.Consulta("SELECT Descricao FROM Distritos WHERE Distrito = '" + codDistr + "'");
+
+                    if (lstDistr.NumLinhas() > 0)
+                    {
+                        armazem.Distrito = lstDistr.Valor("Descricao");
+                    }
+
+                    else
+                    {
+                        armazem.Distrito = null;
+                    }
 
                     listArmazens.Add(armazem);
                     objList.Seguinte();
@@ -57,33 +70,29 @@ namespace Warehouse_catalog.Lib_Primavera
         public static Lib_Primavera.Model.Armazem GetArmazem(string codArmazem)
         {
             ErpBS objMotor = new ErpBS();
-            GcpBEArmazem objArmazem = new GcpBEArmazem();
-
+           
 
             Model.Armazem myArmazem = new Model.Armazem();
+            StdBELista objList;
 
             if (PriEngine.InitializeCompany("BELAFLOR", "admin", "admin") == true)
             {
 
-                if (PriEngine.Engine.Comercial.Armazens.Existe(codArmazem) == true)
-                {
-                    objArmazem = PriEngine.Engine.Comercial.Armazens.Edita(codArmazem);
-                    myArmazem.CodArmazem = objArmazem.get_Armazem();
-                    myArmazem.Descricao = objArmazem.get_Descricao();
-                    myArmazem.Morada = objArmazem.get_Morada();
-                    myArmazem.Localidade = objArmazem.get_Localidade();
-                    myArmazem.CodPostal = objArmazem.get_CodigoPostal();
-                    myArmazem.CodPostalLocalidade = objArmazem.get_LocalidadeCodigoPostal();
-                    myArmazem.Telefone = objArmazem.get_Telefone();
-                    myArmazem.Fax = objArmazem.get_Fax();
-                    myArmazem.Distrito = objArmazem.get_Distrito();
-                    myArmazem.Pais = objArmazem.get_Pais();
+                    objList = PriEngine.Engine.Consulta("SELECT Armazem, Descricao, Morada, Localidade, Cp, CpLocalidade, Telefone, Fax, Distrito, Pais FROM  ARMAZENS WHERE Armazem = '" + codArmazem + "'");
+                    
+                    myArmazem.CodArmazem = objList.Valor("Armazem");
+                    myArmazem.Descricao = objList.Valor("Descricao");
+                    myArmazem.Morada = objList.Valor("Morada");
+                    myArmazem.Localidade = objList.Valor("Localidade");
+                    myArmazem.CodPostal = objList.Valor("Cp");
+                    myArmazem.CodPostalLocalidade = objList.Valor("CpLocalidade");
+                    myArmazem.Telefone = objList.Valor("Telefone");
+                    myArmazem.Fax = objList.Valor("Fax");
+                    myArmazem.Distrito = objList.Valor("Distrito");
+                    myArmazem.Pais = objList.Valor("Pais");
                     return myArmazem;
-                }
-                else
-                {
-                    return null;
-                }
+                
+                
             }
             else
                 return null;
@@ -100,25 +109,47 @@ namespace Warehouse_catalog.Lib_Primavera
 
             Model.Artigo artigo = new Model.Artigo();
             List<Model.Artigo> listArtigos = new List<Model.Artigo>();
+            GcpBEFamilia objFamilia = new GcpBEFamilia();
 
             if (PriEngine.InitializeCompany("BELAFLOR", "admin", "admin") == true)
             {
 
                 //objList = PriEngine.Engine.Comercial.Artigos.LstArtigos();
 
-                objList = PriEngine.Engine.Consulta("SELECT Artigo, Descricao, PCMedio, Iva, Familia FROM  ARTIGO");
-
+                objList = PriEngine.Engine.Consulta("SELECT Artigo, Descricao, PCMedio, Iva, Familia, STKActual FROM  ARTIGO");
+                
                 while (!objList.NoFim())
                 {
-                    artigo = new Model.Artigo();
-                    artigo.CodArtigo = objList.Valor("Artigo");
-                    artigo.Descricao = objList.Valor("Descricao");
-                    artigo.Preco = objList.Valor("PCMedio");
-                    artigo.IVA = objList.Valor("Iva");
-                    artigo.Familia = objList.Valor("Familia");
+                    string codFamilia = objList.Valor("Familia");
 
-                    listArtigos.Add(artigo);
-                    objList.Seguinte();
+                    if (PriEngine.Engine.Comercial.Familias.Existe(codFamilia) == true)
+                    {
+
+                        objFamilia = PriEngine.Engine.Comercial.Familias.Edita(codFamilia);
+                        artigo = new Model.Artigo();
+                        artigo.CodArtigo = objList.Valor("Artigo");
+                        artigo.Descricao = objList.Valor("Descricao");
+                        artigo.Preco = objList.Valor("PCMedio");
+                        artigo.IVA = objList.Valor("Iva");
+                        artigo.Familia = objFamilia.get_Descricao();
+                        artigo.StkAtual = objList.Valor("STKActual");
+
+                        StdBELista anexosList = PriEngine.Engine.Consulta("SELECT Id, FicheiroOrig, Descricao FROM Anexos WHERE Chave = '" + objList.Valor("Artigo") + "'");
+
+                        if (anexosList.NumLinhas() > 0)
+                        {
+                            artigo.Imagem = anexosList.Valor("Id") + '.' + anexosList.Valor("FicheiroOrig").Split('.')[1];
+                            artigo.DescricaoImg = anexosList.Valor("Descricao");
+                        }
+                        else {
+                            artigo.Imagem = null;
+                            artigo.DescricaoImg = "Sem imagem";
+                        }
+
+                        listArtigos.Add(artigo);
+                        objList.Seguinte();
+
+                    }
                 }
 
                 return listArtigos;
@@ -133,18 +164,41 @@ namespace Warehouse_catalog.Lib_Primavera
             GcpBEArtigo objArtigo = new GcpBEArtigo();
 
             Model.Artigo myArtigo = new Model.Artigo();
+            GcpBEFamilia objFamilia = new GcpBEFamilia();
 
             if (PriEngine.InitializeCompany("BELAFLOR", "admin", "admin") == true)
             {
                 
                 if (PriEngine.Engine.Comercial.Artigos.Existe(codArtigo) == true)
                 {
+
                     objArtigo = PriEngine.Engine.Comercial.Artigos.Edita(codArtigo);
                     myArtigo.CodArtigo = objArtigo.get_Artigo();
                     myArtigo.Descricao = objArtigo.get_Descricao();
                     myArtigo.Preco = objArtigo.get_PCMedio();
                     myArtigo.IVA = objArtigo.get_IVA();
-                    myArtigo.Familia = objArtigo.get_Familia();
+                    myArtigo.StkAtual = objArtigo.get_StkActual();
+
+                    string codFamilia = objArtigo.get_Familia();
+                    if (PriEngine.Engine.Comercial.Familias.Existe(codFamilia) == true)
+                    {
+                        objFamilia = PriEngine.Engine.Comercial.Familias.Edita(codFamilia);
+                        myArtigo.Familia = objFamilia.get_Descricao();
+                    }
+
+                    StdBELista anexosList = PriEngine.Engine.Consulta("SELECT Id, FicheiroOrig, Descricao FROM Anexos WHERE Chave = '" + objArtigo.get_Artigo() + "'");
+
+                    if (anexosList.NumLinhas() > 0)
+                    {
+                        myArtigo.Imagem = anexosList.Valor("Id") + '.' + anexosList.Valor("FicheiroOrig").Split('.')[1];
+                        myArtigo.DescricaoImg = anexosList.Valor("Descricao");
+                    }
+                    else
+                    {
+                        myArtigo.Imagem = null;
+                        myArtigo.DescricaoImg = "Sem imagem";
+                    }
+                    
                     
                     return myArtigo;
                 }
@@ -170,20 +224,45 @@ namespace Warehouse_catalog.Lib_Primavera
             Model.ArtigoArmazem artigo_armazem = new Model.ArtigoArmazem();
             List<Model.ArtigoArmazem> listArtigosArmazens = new List<Model.ArtigoArmazem>();
 
+            Model.Armazem armazem;
+            Model.Artigo artigo;
+
             if (PriEngine.InitializeCompany("BELAFLOR", "admin", "admin") == true)
             {
 
                 //objList = PriEngine.Engine.Comercial.Artigos.LstArtigos();
 
-                objList = PriEngine.Engine.Consulta("SELECT Artigo, Armazem, Lote, StkActual FROM  ARTIGOARMAZEM");
+                objList = PriEngine.Engine.Consulta("SELECT Artigo, Armazem, StkActual FROM  ARTIGOARMAZEM");
 
                 while (!objList.NoFim())
                 {
                     artigo_armazem = new Model.ArtigoArmazem();
-                    artigo_armazem.Artigo = objList.Valor("Artigo");
-                    artigo_armazem.Armazem = objList.Valor("Armazem");
-                    artigo_armazem.Lote = objList.Valor("Lote");
-                    artigo_armazem.StockAtual = objList.Valor("StkActual");
+
+                    artigo = GetArtigo(objList.Valor("Artigo"));
+                    armazem = GetArmazem(objList.Valor("Armazem"));
+                    
+                    
+                    artigo_armazem.CodArtigo = artigo.CodArtigo;
+                    artigo_armazem.DescArtigo = artigo.Descricao;
+                    artigo_armazem.Preco = artigo.Preco;
+                    artigo_armazem.IVA = artigo.IVA;
+                    artigo_armazem.Familia = artigo.Familia;
+                    artigo_armazem.Imagem = artigo.Imagem;
+                    artigo_armazem.StkAtual = artigo.StkAtual;
+                    artigo_armazem.DescricaoImg = artigo.DescricaoImg;
+
+                    artigo_armazem.CodArmazem = armazem.CodArmazem;
+                    artigo_armazem.DescArmazem = armazem.Descricao;
+                    artigo_armazem.Morada = armazem.Morada;
+                    artigo_armazem.Localidade = armazem.Localidade;
+                    artigo_armazem.CodPostal = armazem.CodPostal;
+                    artigo_armazem.CodPostalLocalidade = armazem.CodPostalLocalidade;
+                    artigo_armazem.Telefone = armazem.Telefone;
+                    artigo_armazem.Fax = armazem.Fax;
+                    artigo_armazem.Distrito = armazem.Distrito;
+                    artigo_armazem.Pais = armazem.Pais;
+ 
+                    artigo_armazem.StkArmazem = objList.Valor("StkActual");
 
                     listArtigosArmazens.Add(artigo_armazem);
                     objList.Seguinte();
@@ -213,10 +292,10 @@ namespace Warehouse_catalog.Lib_Primavera
                 while (!objList.NoFim())
                 {
                     artigo_armazem = new Model.ArtigoArmazem();
-                    artigo_armazem.Artigo = objList.Valor("Artigo");
-                    artigo_armazem.Armazem = objList.Valor("Armazem");
-                    artigo_armazem.Lote = objList.Valor("Lote");
-                    artigo_armazem.StockAtual = objList.Valor("StkActual");
+                    //artigo_armazem.Artigo = objList.Valor("Artigo");
+                    //artigo_armazem.Armazem = objList.Valor("Armazem");
+                    //artigo_armazem.Lote = objList.Valor("Lote");
+                    //artigo_armazem.StockAtual = objList.Valor("StkActual");
 
                     listArtigosArmazens.Add(artigo_armazem);
                     objList.Seguinte();
@@ -228,30 +307,7 @@ namespace Warehouse_catalog.Lib_Primavera
                 return null;
         }
 
-        public static Lib_Primavera.Model.ArtigoArmazem GetArtigoArmazem(string codArtigo)
-        {
-            ErpBS objMotor = new ErpBS();
-            GcpBEArtigoArmazem objArtigo = new GcpBEArtigoArmazem();
-
-            //  Console.Write("OLA");
-
-            Model.ArtigoArmazem myArtigo = new Model.ArtigoArmazem();
-
-            if (PriEngine.InitializeCompany("BELAFLOR", "admin", "admin") == true)
-            {
-
-                myArtigo.Armazem = "A1";
-                myArtigo.Artigo = "BOUQ.0005";
-                myArtigo.Lote = "L1";
-                myArtigo.StockAtual = 30;
-
-                return myArtigo;
- 
-            }
-            else
-                return null;
-        }
-
+        
         #endregion ArtigoArmazem
     }
 }

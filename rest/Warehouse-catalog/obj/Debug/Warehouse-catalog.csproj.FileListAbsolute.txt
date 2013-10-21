@@ -68,35 +68,3 @@ C:\Users\user\documents\visual studio 2012\Projects\Warehouse-catalog\Warehouse-
 C:\Users\user\documents\visual studio 2012\Projects\Warehouse-catalog\Warehouse-catalog\obj\Debug\Warehouse-catalog.dll
 C:\Users\user\documents\visual studio 2012\Projects\Warehouse-catalog\Warehouse-catalog\obj\Debug\Warehouse-catalog.pdb
 C:\Users\user\documents\visual studio 2012\Projects\Warehouse-catalog\Warehouse-catalog\obj\Debug\Warehouse-catalog.csprojResolveAssemblyReference.cache
-C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog\bin\Warehouse-catalog.dll
-C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog\bin\Warehouse-catalog.pdb
-C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog\bin\Microsoft.Data.Edm.dll
-C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog\bin\Microsoft.Data.OData.dll
-C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog\bin\Microsoft.Web.Infrastructure.dll
-C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog\bin\System.Net.Http.Formatting.dll
-C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog\bin\System.Spatial.dll
-C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog\bin\System.Web.Helpers.dll
-C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog\bin\System.Web.Http.dll
-C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog\bin\System.Web.Http.WebHost.dll
-C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog\bin\System.Web.Mvc.dll
-C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog\bin\System.Web.Razor.dll
-C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog\bin\System.Web.WebPages.Deployment.dll
-C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog\bin\System.Web.WebPages.dll
-C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog\bin\System.Web.WebPages.Razor.dll
-C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog\bin\EntityFramework.xml
-C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog\bin\Microsoft.Web.Infrastructure.xml
-C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog\bin\Newtonsoft.Json.xml
-C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog\bin\System.Net.Http.Formatting.xml
-C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog\bin\System.Web.Helpers.xml
-C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog\bin\System.Web.Http.xml
-C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog\bin\System.Web.Http.WebHost.xml
-C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog\bin\System.Web.Mvc.xml
-C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog\bin\System.Web.Razor.xml
-C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog\bin\System.Web.WebPages.xml
-C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog\bin\System.Web.WebPages.Deployment.xml
-C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog\bin\System.Web.WebPages.Razor.xml
-C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog\bin\System.Web.Http.Tracing.xml
-C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog\bin\System.Web.Http.OData.xml
-C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog\obj\Debug\Warehouse-catalog.csprojResolveAssemblyReference.cache
-C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog\obj\Debug\Warehouse-catalog.dll
-C:\git\sinf-warehouse-catalog\rest\Warehouse-catalog\obj\Debug\Warehouse-catalog.pdb
