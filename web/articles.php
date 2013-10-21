@@ -16,6 +16,4 @@
     $smarty->assign("products", $products);
     $smarty->assign("warehouses", $warehouses);
     $smarty->display("articles.tpl");
-    var_dump($products);
-    var_dump($warehouses);
 ?>
