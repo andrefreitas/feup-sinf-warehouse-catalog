@@ -14,7 +14,7 @@ namespace Warehouse_catalog.Controllers
     {
         //
         // GET: /Artigos/
-        // Na pesquisa por id substituir o "." por "_" 
+        // Na pesquisa por id substituir o "." por "!" 
 
 
         public IEnumerable<Lib_Primavera.Model.Artigo> Get()
@@ -24,7 +24,7 @@ namespace Warehouse_catalog.Controllers
 
         public Artigo Get(string id)
         {
-            id = id.Replace("_", ".");
+            id = id.Replace("!", ".");
 
             Lib_Primavera.Model.Artigo artigo = Lib_Primavera.Comercial.GetArtigo(id);
             if (artigo == null)
