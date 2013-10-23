@@ -164,7 +164,7 @@ namespace Warehouse_catalog.Lib_Primavera
 
                 //objList = PriEngine.Engine.Comercial.Artigos.LstArtigos();
 
-                objList = PriEngine.Engine.Consulta("SELECT Artigo, Descricao, PCMedio, Iva, Familia, STKActual FROM  ARTIGO");
+                objList = PriEngine.Engine.Consulta("SELECT ARTIGO.Artigo, Descricao, PVP1, Iva, Familia, STKActual FROM ARTIGO, ARTIGOMOEDA WHERE ARTIGO.Artigo = ARTIGOMOEDA.Artigo");
 
                 while (!objList.NoFim())
                 {
@@ -177,7 +177,7 @@ namespace Warehouse_catalog.Lib_Primavera
                         artigo = new Model.Artigo();
                         artigo.CodArtigo = objList.Valor("Artigo");
                         artigo.Descricao = objList.Valor("Descricao");
-                        artigo.Preco = objList.Valor("PCMedio");
+                        artigo.Preco = objList.Valor("PVP1");
                         artigo.IVA = objList.Valor("Iva");
                         artigo.Familia = objFamilia.Valor("Descricao");
                         artigo.StkAtual = objList.Valor("STKActual");
@@ -218,11 +218,11 @@ namespace Warehouse_catalog.Lib_Primavera
 
                 if (PriEngine.Engine.Comercial.Artigos.Existe(codArtigo) == true)
                 {
-                    StdBELista objArtigo = PriEngine.Engine.Consulta("SELECT Artigo, Descricao, PCMedio, Iva, STKActual, Familia FROM Artigo WHERE Artigo = '" + codArtigo + "'");
+                    StdBELista objArtigo = PriEngine.Engine.Consulta("SELECT ARTIGO.Artigo, Descricao, PVP1, Iva, Familia, STKActual FROM ARTIGO, ARTIGOMOEDA WHERE ARTIGO.Artigo = '" + codArtigo + "' AND ARTIGO.Artigo = ARTIGOMOEDA.Artigo");
 
                     myArtigo.CodArtigo = objArtigo.Valor("Artigo");
                     myArtigo.Descricao = objArtigo.Valor("Descricao");
-                    myArtigo.Preco = objArtigo.Valor("PCMedio");
+                    myArtigo.Preco = objArtigo.Valor("PVP1");
                     myArtigo.IVA = objArtigo.Valor("Iva");
                     myArtigo.StkAtual = objArtigo.Valor("STKActual");
 
