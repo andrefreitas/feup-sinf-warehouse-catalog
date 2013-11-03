@@ -11,7 +11,7 @@ using Interop.IGcpBS800;
 
 namespace Warehouse_catalog.Lib_Primavera
 {
-    public class Utilizador
+    public class Utilizadores
     {
         public static bool LoginUtilizador(string email, string password)
         {

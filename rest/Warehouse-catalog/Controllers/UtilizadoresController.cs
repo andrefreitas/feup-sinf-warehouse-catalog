@@ -43,7 +43,7 @@ namespace Warehouse_catalog.Controllers
             string email = separValue[0];
             string password = separValue[1];
 
-            return Lib_Primavera.Utilizador.LoginUtilizador(email, password);
+            return Lib_Primavera.Utilizadores.LoginUtilizador(email, password);
         }
 
         // POST /Utilizadores/
@@ -53,7 +53,7 @@ namespace Warehouse_catalog.Controllers
 
             StatusAnswer toReturn = new StatusAnswer();
 
-            if (Lib_Primavera.Utilizador.LoginUtilizador(id.email, id.password))
+            if (Lib_Primavera.Utilizadores.LoginUtilizador(id.email, id.password))
             {
                 toReturn.status = "ok";
             }

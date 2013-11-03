@@ -18,12 +18,12 @@ namespace Warehouse_catalog.Controllers
 
         public IEnumerable<Lib_Primavera.Model.Armazem> Get()
         {
-            return Lib_Primavera.Comercial.ListaArmazens();
+            return Lib_Primavera.Armazens.ListaArmazens();
         }
 
         public Armazem Get(string id)
         {
-            Lib_Primavera.Model.Armazem armazem = Lib_Primavera.Comercial.GetArmazem(id);
+            Lib_Primavera.Model.Armazem armazem = Lib_Primavera.Armazens.GetArmazem(id);
             if (armazem == null)
             {
                 throw new HttpResponseException(
