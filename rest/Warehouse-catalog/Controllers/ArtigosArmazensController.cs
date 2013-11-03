@@ -17,12 +17,12 @@ namespace Warehouse_catalog.Controllers
 
         public IEnumerable<Lib_Primavera.Model.ArtigoArmazem> Get()
         {
-            return Lib_Primavera.Comercial.ListaArtigosArmazens();
+            return Lib_Primavera.ArtigosArmazens.ListaArtigosArmazens();
         }
 
         public IEnumerable<Lib_Primavera.Model.ArtigoArmazem> Get(string id)
         {
-            return Lib_Primavera.Comercial.GetArtigosPorArmazem(id);
+            return Lib_Primavera.ArtigosArmazens.GetArtigosPorArmazem(id);
         }
 
         

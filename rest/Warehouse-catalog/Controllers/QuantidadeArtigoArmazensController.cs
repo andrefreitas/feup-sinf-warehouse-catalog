@@ -27,7 +27,7 @@ namespace Warehouse_catalog.Controllers
 
             id = id.Replace('!', '.');
             
-            return Lib_Primavera.Comercial.GetQuantidadeArtigoArmazem(id);
+            return Lib_Primavera.QuantidadeArtigoArmazens.GetQuantidadeArtigoArmazens(id);
         }
 
     }

@@ -19,18 +19,19 @@ namespace Warehouse_catalog.Controllers
 
         public IEnumerable<Lib_Primavera.Model.Artigo> Get()
         {
-            return Lib_Primavera.Comercial.ListaArtigos();
+            return Lib_Primavera.Artigos.ListaArtigos();
         }
 
         public Artigo Get(string id)
         {
             id = id.Replace("!", ".");
 
-            Lib_Primavera.Model.Artigo artigo = Lib_Primavera.Comercial.GetArtigo(id);
+            Lib_Primavera.Model.Artigo artigo = Lib_Primavera.Artigos.GetArtigo(id);
             if (artigo == null)
             {
-                throw new HttpResponseException(
-                        Request.CreateResponse(HttpStatusCode.NotFound));
+                //throw new HttpResponseException(
+                //        Request.CreateResponse(HttpStatusCode.NotFound));
+                return null;
 
             }
             else

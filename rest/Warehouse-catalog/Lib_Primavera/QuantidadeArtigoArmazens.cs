@@ -11,20 +11,9 @@ using Interop.IGcpBS800;
 
 namespace Warehouse_catalog.Lib_Primavera
 {
-    public class Comercial
+    public class QuantidadeArtigoArmazens
     {
-       
-       
-        #region ArtigoArmazem
-
-       
-
-
-        #endregion ArtigoArmazem
-
-        #region quantidadeArtigoArmazem
-
-        public static List<Model.ArmazemQuantidade> GetQuantidadeArtigoArmazem(string codArtigo)
+        public static List<Model.ArmazemQuantidade> GetQuantidadeArtigoArmazens(string codArtigo)
         {
             ErpBS objMotor = new ErpBS();
             StdBELista objList;
@@ -55,7 +44,5 @@ namespace Warehouse_catalog.Lib_Primavera
             else
                 return null;
         }
-
-        #endregion quantidadeArtigoArmazem
     }
 }
