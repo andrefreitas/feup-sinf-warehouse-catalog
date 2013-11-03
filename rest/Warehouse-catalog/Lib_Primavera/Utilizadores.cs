@@ -18,7 +18,7 @@ namespace Warehouse_catalog.Lib_Primavera
             ErpBS objMotor = new ErpBS();
             StdBELista objList;
 
-            if (PriEngine.InitializeCompany("BELAFLOR", "admin", "admin") == true)
+            if (PriEngine.InitializeCompany(ConfigurationConstants.NAME_COMPANY, ConfigurationConstants.USERNAME, ConfigurationConstants.PASSWORD) == true)
             {
                 objList = PriEngine.Engine.Consulta("SELECT CDU_Password FROM Clientes WHERE CDU_Email = '" + email + "'");
 
@@ -43,7 +43,7 @@ namespace Warehouse_catalog.Lib_Primavera
             ErpBS objMotor = new ErpBS();
             StdBELista objList;
 
-            if (PriEngine.InitializeCompany("BELAFLOR", "admin", "admin") == true)
+            if (PriEngine.InitializeCompany(ConfigurationConstants.NAME_COMPANY, ConfigurationConstants.USERNAME, ConfigurationConstants.PASSWORD) == true)
             {
                 objList = PriEngine.Engine.Consulta("SELECT CDU_Password FROM Clientes WHERE CDU_Email = '" + email + "'");
 

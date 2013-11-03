@@ -24,7 +24,7 @@ namespace Warehouse_catalog.Lib_Primavera
             Model.Armazem armazem;
             Model.Artigo artigo;
 
-            if (PriEngine.InitializeCompany("BELAFLOR", "admin", "admin") == true)
+            if (PriEngine.InitializeCompany(ConfigurationConstants.NAME_COMPANY, ConfigurationConstants.USERNAME, ConfigurationConstants.PASSWORD) == true)
             {
 
                 //objList = PriEngine.Engine.Comercial.Artigos.LstArtigos();
@@ -78,7 +78,7 @@ namespace Warehouse_catalog.Lib_Primavera
 
             List<Model.ArtigoArmazem> listArtigosArmazens = new List<Model.ArtigoArmazem>();
 
-            if (PriEngine.InitializeCompany("BELAFLOR", "admin", "admin") == true)
+            if (PriEngine.InitializeCompany(ConfigurationConstants.NAME_COMPANY, ConfigurationConstants.USERNAME, ConfigurationConstants.PASSWORD) == true)
             {
 
                 objList = PriEngine.Engine.Consulta("SELECT Artigo, Armazem, StkActual FROM ARTIGOARMAZEM WHERE Armazem = '" + codArmazem + "'");

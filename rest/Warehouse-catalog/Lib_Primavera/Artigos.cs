@@ -21,7 +21,7 @@ namespace Warehouse_catalog.Lib_Primavera
             Model.Artigo artigo = new Model.Artigo();
             List<Model.Artigo> listArtigos = new List<Model.Artigo>();
 
-            if (PriEngine.InitializeCompany("BELAFLOR", "admin", "admin") == true)
+            if (PriEngine.InitializeCompany(ConfigurationConstants.NAME_COMPANY, ConfigurationConstants.USERNAME, ConfigurationConstants.PASSWORD) == true)
             {
 
                 //objList = PriEngine.Engine.Comercial.Artigos.LstArtigos();
@@ -75,7 +75,7 @@ namespace Warehouse_catalog.Lib_Primavera
 
             Model.Artigo myArtigo = new Model.Artigo();
 
-            if (PriEngine.InitializeCompany("BELAFLOR", "admin", "admin") == true)
+            if (PriEngine.InitializeCompany(ConfigurationConstants.NAME_COMPANY, ConfigurationConstants.USERNAME, ConfigurationConstants.PASSWORD) == true)
             {
 
                 if (PriEngine.Engine.Comercial.Artigos.Existe(codArtigo) == true)

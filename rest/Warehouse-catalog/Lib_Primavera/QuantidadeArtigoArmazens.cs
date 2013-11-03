@@ -20,7 +20,7 @@ namespace Warehouse_catalog.Lib_Primavera
 
             List<Model.ArmazemQuantidade> listQtArmazens = new List<Model.ArmazemQuantidade>();
 
-            if (PriEngine.InitializeCompany("BELAFLOR", "admin", "admin") == true)
+            if (PriEngine.InitializeCompany(ConfigurationConstants.NAME_COMPANY, ConfigurationConstants.USERNAME, ConfigurationConstants.PASSWORD) == true)
             {
 
                 objList = PriEngine.Engine.Consulta("SELECT ARMAZENS.Armazem, ARMAZENS.Descricao, ARMAZENS.Localidade, ARTIGOARMAZEM.StkActual FROM ARTIGOARMAZEM, ARMAZENS WHERE ARTIGOARMAZEM.Artigo = '" + codArtigo + "' AND ARMAZENS.Armazem = ARTIGOARMAZEM.Armazem");

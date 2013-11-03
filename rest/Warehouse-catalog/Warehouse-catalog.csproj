@@ -257,6 +257,7 @@
     </Compile>
     <Compile Include="Lib_Primavera\Artigos.cs" />
     <Compile Include="Lib_Primavera\ArtigosArmazens.cs" />
+    <Compile Include="Lib_Primavera\ConfigurationConstants.cs" />
     <Compile Include="Lib_Primavera\Model\Armazem.cs" />
     <Compile Include="Lib_Primavera\Model\ArmazemQuantidade.cs" />
     <Compile Include="Lib_Primavera\Armazens.cs" />

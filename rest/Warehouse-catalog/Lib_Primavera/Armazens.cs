@@ -21,7 +21,7 @@ namespace Warehouse_catalog.Lib_Primavera
             Model.Armazem armazem = new Model.Armazem();
             List<Model.Armazem> listArmazens = new List<Model.Armazem>();
 
-            if (PriEngine.InitializeCompany("BELAFLOR", "admin", "admin") == true)
+            if (PriEngine.InitializeCompany(ConfigurationConstants.NAME_COMPANY, ConfigurationConstants.USERNAME, ConfigurationConstants.PASSWORD) == true)
             {
 
                 //objList = PriEngine.Engine.Comercial.Clientes.LstClientes();
@@ -73,7 +73,7 @@ namespace Warehouse_catalog.Lib_Primavera
             Model.Armazem myArmazem = new Model.Armazem();
             StdBELista objList;
 
-            if (PriEngine.InitializeCompany("BELAFLOR", "admin", "admin") == true)
+            if (PriEngine.InitializeCompany(ConfigurationConstants.NAME_COMPANY, ConfigurationConstants.USERNAME, ConfigurationConstants.PASSWORD) == true)
             {
 
                 objList = PriEngine.Engine.Consulta("SELECT Armazem, Descricao, Morada, Localidade, Cp, CpLocalidade, Telefone, Fax, Distrito, Pais FROM ARMAZENS WHERE Armazem = '" + codArmazem + "'");
