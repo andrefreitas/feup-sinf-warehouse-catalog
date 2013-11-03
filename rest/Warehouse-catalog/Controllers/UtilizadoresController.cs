@@ -13,6 +13,18 @@ namespace Warehouse_catalog.Controllers
 {
     public class UtilizadoresController : ApiController
     {
+
+        public class UtilizadorData
+        {
+            public string email { get; set; }
+            public string password { get; set; }
+        }
+
+        public class StatusAnswer
+        {
+            public string status { get; set; }
+        }
+        
         //
         // GET: /Utilizadores/
 
@@ -31,19 +43,27 @@ namespace Warehouse_catalog.Controllers
             string email = separValue[0];
             string password = separValue[1];
 
-            return Lib_Primavera.Comercial.LoginUtilizador(email, password);
+            return Lib_Primavera.Utilizador.LoginUtilizador(email, password);
         }
 
-        public class UtilizadorData
+        // POST /Utilizadores/
+        public StatusAnswer Post(UtilizadorData id)
         {
-            public string email { get; set; }
-            public string password { get; set; }
-        }
+           // json : { "email" : "abc@abc.pt" , "password": "123456" }
 
-        // POST api/values
-        public bool Post(UtilizadorData id)
-        {
-           return Lib_Primavera.Comercial.LoginUtilizador(id.email, id.password);
+            StatusAnswer toReturn = new StatusAnswer();
+
+            if (Lib_Primavera.Utilizador.LoginUtilizador(id.email, id.password))
+            {
+                toReturn.status = "ok";
+            }
+
+            else
+            {
+                toReturn.status = "error";
+            }
+            
+            return toReturn;
         }
 
     }
