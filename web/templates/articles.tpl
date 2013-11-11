@@ -41,16 +41,10 @@
       <div id="articles">
         {foreach $articles as $article}
           <div class="box article">
-            {if $selected neq 'none'}
             <div class="name">{$article.DescArtigo|truncate:25}</div>
             <div class="pvp">{$article.Preco|truncate:25} €</div>
             <div class="stock"><b>Stock</b> {$article.StkAtual}</div>
             <div class="warehouse"><img src="images/icons/warehouse.svg" width="40px">{$article.DescArmazem|truncate:15}</div>
-            {else}
-            <div class="name">{$article.Descricao|truncate:25}</div>
-            <div class="pvp">{$article.Preco|truncate:25} €</div>
-            <div class="stock"><b>Stock</b> {$article.StkAtual}</div>
-            {/if}
           </div>
         {/foreach}
       </div>

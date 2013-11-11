@@ -11,7 +11,7 @@
         $warehousesWithArticles = getJsonResponse('localhost:49300/api/artigosarmazens/'.$_REQUEST['warehouse']);
         $smarty->assign("selected", $_REQUEST['warehouse']);
     }else{
-        $warehousesWithArticles = getJsonResponse('localhost:49300/api/artigos');
+        $warehousesWithArticles = getJsonResponse('localhost:49300/api/artigosarmazens');
         $smarty->assign("selected", 'none');
         
     }
