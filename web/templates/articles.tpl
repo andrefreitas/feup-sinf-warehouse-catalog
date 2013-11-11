@@ -30,7 +30,7 @@
         <div id="parameters">
           Armazém:
           <select onchange="location = 'articles.php?warehouse='+this.options[this.selectedIndex].value;">
-            <option {if $selected eq 'none'}selected{/if}>Qualquer um</option>
+            <option {if $selected eq 'none'}selected{/if} value="none">Qualquer um</option>
             {foreach from=$warehouses item=warehouse}
               <option {if $selected eq $warehouse.CodArmazem}selected{/if} value="{$warehouse.CodArmazem}">{$warehouse.Descricao}</option>
             {/foreach}
@@ -41,10 +41,16 @@
       <div id="articles">
         {foreach $articles as $article}
           <div class="box article">
-            <div class="name">{foreach $products as $product}{if $product.CodArtigo eq $article.Artigo}{$product.Descricao|truncate:25}{/if}{/foreach}</div>
-            <div class="pvp">{foreach $products as $product}{if $product.CodArtigo eq $article.Artigo}{$product.Preco|truncate:25}{/if}{/foreach} €</div>
-            <div class="stock"><b>Stock</b> {$article.StockAtual}</div>
-            <div class="warehouse"><img src="images/icons/warehouse.svg" width="40px">{foreach $warehouses as $warehouse}{if $warehouse.CodArmazem eq $article.Armazem}{$warehouse.Descricao|truncate:15}{/if}{/foreach}</div>
+            {if $selected neq 'none'}
+            <div class="name">{$article.DescArtigo|truncate:25}</div>
+            <div class="pvp">{$article.Preco|truncate:25} €</div>
+            <div class="stock"><b>Stock</b> {$article.StkAtual}</div>
+            <div class="warehouse"><img src="images/icons/warehouse.svg" width="40px">{$article.DescArmazem|truncate:15}</div>
+            {else}
+            <div class="name">{$article.Descricao|truncate:25}</div>
+            <div class="pvp">{$article.Preco|truncate:25} €</div>
+            <div class="stock"><b>Stock</b> {$article.StkAtual}</div>
+            {/if}
           </div>
         {/foreach}
       </div>
