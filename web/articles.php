@@ -5,7 +5,7 @@
     //next example will recieve all messages for specific conversation
 
     //var_dump($decoded);
-    $warehouses = getJsonResponse('localhost:49300/api/artigosarmazens');
+    $warehouses = getJsonResponse('localhost:49300/api/armazens');
     $smarty->assign("warehouses", $warehouses); 
     if (isset($_REQUEST['warehouse'])){
         $warehousesWithArticles = getJsonResponse('localhost:49300/api/artigosarmazens/'.$_REQUEST['warehouse']);
