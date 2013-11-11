@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2013-10-21 12:43:42
+<?php /* Smarty version Smarty-3.1.15, created on 2013-11-11 11:31:10
          compiled from "..\templates\articles.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:158945264f48bac7b69-33844750%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '1e8fabe4c372af95d757ea8f4ade2a7d0c3ae980' => 
     array (
       0 => '..\\templates\\articles.tpl',
-      1 => 1382352217,
+      1 => 1384165858,
       2 => 'file',
     ),
   ),
@@ -23,8 +23,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'warehouses' => 0,
     'warehouse' => 0,
     'articles' => 0,
-    'products' => 0,
-    'product' => 0,
     'article' => 0,
   ),
   'has_nocache_code' => false,
@@ -62,7 +60,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <div id="parameters">
           Armazém:
           <select onchange="location = 'articles.php?warehouse='+this.options[this.selectedIndex].value;">
-            <option <?php if ($_smarty_tpl->tpl_vars['selected']->value==0) {?>selected<?php }?>>Qualquer um</option>
+            <option <?php if ($_smarty_tpl->tpl_vars['selected']->value=='none') {?>selected<?php }?> value="none">Qualquer um</option>
             <?php  $_smarty_tpl->tpl_vars['warehouse'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['warehouse']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['warehouses']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['warehouse']->key => $_smarty_tpl->tpl_vars['warehouse']->value) {
@@ -83,26 +81,14 @@ foreach ($_from as $_smarty_tpl->tpl_vars['article']->key => $_smarty_tpl->tpl_v
 $_smarty_tpl->tpl_vars['article']->_loop = true;
 ?>
           <div class="box article">
-            <div class="name"><?php  $_smarty_tpl->tpl_vars['product'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['product']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['products']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['product']->key => $_smarty_tpl->tpl_vars['product']->value) {
-$_smarty_tpl->tpl_vars['product']->_loop = true;
-?><?php if ($_smarty_tpl->tpl_vars['product']->value['CodArtigo']==$_smarty_tpl->tpl_vars['article']->value['Artigo']) {?><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['product']->value['Descricao'],25);?>
-<?php }?><?php } ?></div>
-            <div class="pvp"><?php  $_smarty_tpl->tpl_vars['product'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['product']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['products']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['product']->key => $_smarty_tpl->tpl_vars['product']->value) {
-$_smarty_tpl->tpl_vars['product']->_loop = true;
-?><?php if ($_smarty_tpl->tpl_vars['product']->value['CodArtigo']==$_smarty_tpl->tpl_vars['article']->value['Artigo']) {?><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['product']->value['Preco'],25);?>
-<?php }?><?php } ?> €</div>
-            <div class="stock"><b>Stock</b> <?php echo $_smarty_tpl->tpl_vars['article']->value['StockAtual'];?>
+            <div class="name"><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['article']->value['DescArtigo'],25);?>
 </div>
-            <div class="warehouse"><img src="images/icons/warehouse.svg" width="40px"><?php  $_smarty_tpl->tpl_vars['warehouse'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['warehouse']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['warehouses']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['warehouse']->key => $_smarty_tpl->tpl_vars['warehouse']->value) {
-$_smarty_tpl->tpl_vars['warehouse']->_loop = true;
-?><?php if ($_smarty_tpl->tpl_vars['warehouse']->value['CodArmazem']==$_smarty_tpl->tpl_vars['article']->value['Armazem']) {?><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['warehouse']->value['Descricao'],15);?>
-<?php }?><?php } ?></div>
+            <div class="pvp"><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['article']->value['Preco'],25);?>
+ €</div>
+            <div class="stock"><b>Stock</b> <?php echo $_smarty_tpl->tpl_vars['article']->value['StkAtual'];?>
+</div>
+            <div class="warehouse"><img src="images/icons/warehouse.svg" width="40px"><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['article']->value['DescArmazem'],15);?>
+</div>
           </div>
         <?php } ?>
       </div>
