@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2013-11-11 11:31:10
+<?php /* Smarty version Smarty-3.1.15, created on 2013-11-11 11:48:51
          compiled from "..\templates\articles.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:158945264f48bac7b69-33844750%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '1e8fabe4c372af95d757ea8f4ade2a7d0c3ae980' => 
     array (
       0 => '..\\templates\\articles.tpl',
-      1 => 1384165858,
+      1 => 1384166921,
       2 => 'file',
     ),
   ),
@@ -81,6 +81,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['article']->key => $_smarty_tpl->tpl_v
 $_smarty_tpl->tpl_vars['article']->_loop = true;
 ?>
           <div class="box article">
+            <?php if ($_smarty_tpl->tpl_vars['selected']->value!='none') {?>
             <div class="name"><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['article']->value['DescArtigo'],25);?>
 </div>
             <div class="pvp"><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['article']->value['Preco'],25);?>
@@ -89,6 +90,14 @@ $_smarty_tpl->tpl_vars['article']->_loop = true;
 </div>
             <div class="warehouse"><img src="images/icons/warehouse.svg" width="40px"><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['article']->value['DescArmazem'],15);?>
 </div>
+            <?php } else { ?>
+            <div class="name"><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['article']->value['Descricao'],25);?>
+</div>
+            <div class="pvp"><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['article']->value['Preco'],25);?>
+ €</div>
+            <div class="stock"><b>Stock</b> <?php echo $_smarty_tpl->tpl_vars['article']->value['StkAtual'];?>
+</div>
+            <?php }?>
           </div>
         <?php } ?>
       </div>

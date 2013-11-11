@@ -7,7 +7,7 @@
     //var_dump($decoded);
     $warehouses = getJsonResponse('localhost:49300/api/armazens');
     $smarty->assign("warehouses", $warehouses); 
-    if (isset($_REQUEST['warehouse']) || $_REQUEST['warehouse']=="none"){
+    if (isset($_REQUEST['warehouse']) && $_REQUEST['warehouse']!="none"){
         $warehousesWithArticles = getJsonResponse('localhost:49300/api/artigosarmazens/'.$_REQUEST['warehouse']);
         $smarty->assign("selected", $_REQUEST['warehouse']);
     }else{
