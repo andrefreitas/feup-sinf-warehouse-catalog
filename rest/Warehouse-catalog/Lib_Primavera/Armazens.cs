@@ -26,7 +26,7 @@ namespace Warehouse_catalog.Lib_Primavera
 
                 //objList = PriEngine.Engine.Comercial.Clientes.LstClientes();
 
-                objList = PriEngine.Engine.Consulta("SELECT Armazem, Descricao, Morada, Localidade, Cp, CpLocalidade, Telefone, Fax, Distrito, Pais FROM  ARMAZENS");
+                objList = PriEngine.Engine.Consulta("SELECT Armazem, ARMAZENS.Descricao AS Descricao, Morada, Localidade, Cp, CpLocalidade, Telefone, Fax, DISTRITOS.Descricao AS Distrito, Pais FROM ARMAZENS, DISTRITOS WHERE DISTRITOS.Distrito = ARMAZENS.Distrito");
 
                 while (!objList.NoFim())
                 {
@@ -40,20 +40,7 @@ namespace Warehouse_catalog.Lib_Primavera
                     armazem.Telefone = objList.Valor("Telefone");
                     armazem.Fax = objList.Valor("Fax");
                     armazem.Pais = objList.Valor("Pais");
-
-                    string codDistr = objList.Valor("Distrito");
-
-                    StdBELista lstDistr = PriEngine.Engine.Consulta("SELECT Descricao FROM Distritos WHERE Distrito = '" + codDistr + "'");
-
-                    if (lstDistr.NumLinhas() > 0)
-                    {
-                        armazem.Distrito = lstDistr.Valor("Descricao");
-                    }
-
-                    else
-                    {
-                        armazem.Distrito = null;
-                    }
+                    armazem.Distrito = objList.Valor("Distrito");
 
                     listArmazens.Add(armazem);
                     objList.Seguinte();
@@ -76,7 +63,7 @@ namespace Warehouse_catalog.Lib_Primavera
             if (PriEngine.InitializeCompany(ConfigurationConstants.NAME_COMPANY, ConfigurationConstants.USERNAME, ConfigurationConstants.PASSWORD) == true)
             {
 
-                objList = PriEngine.Engine.Consulta("SELECT Armazem, Descricao, Morada, Localidade, Cp, CpLocalidade, Telefone, Fax, Distrito, Pais FROM ARMAZENS WHERE Armazem = '" + codArmazem + "'");
+                objList = PriEngine.Engine.Consulta("SELECT Armazem, ARMAZENS.Descricao AS Descricao, Morada, Localidade, Cp, CpLocalidade, Telefone, Fax, Pais, DISTRITOS.Descricao AS Distrito FROM ARMAZENS, DISTRITOS WHERE DISTRITOS.Distrito = ARMAZENS.Distrito AND Armazem = '" + codArmazem + "'");
 
                 myArmazem.CodArmazem = objList.Valor("Armazem");
                 myArmazem.Descricao = objList.Valor("Descricao");
