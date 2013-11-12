@@ -26,41 +26,24 @@ namespace Warehouse_catalog.Lib_Primavera
 
                 //objList = PriEngine.Engine.Comercial.Artigos.LstArtigos();
 
-                objList = PriEngine.Engine.Consulta("SELECT ARTIGO.Artigo, Descricao, PVP1, Iva, Familia, STKActual FROM ARTIGO, ARTIGOMOEDA WHERE ARTIGO.Artigo = ARTIGOMOEDA.Artigo");
+                objList = PriEngine.Engine.Consulta("SELECT ARTIGO.Artigo AS Artigo, ARTIGO.Descricao AS Descricao, PVP1, Iva, FAMILIAS.Descricao AS Familia, STKActual, ANEXOS.Id AS Id, ANEXOS.FicheiroOrig AS FicheiroOrig, ANEXOS.Descricao AS AnexosDesc "
+                                                  + "FROM ARTIGO, ARTIGOMOEDA, FAMILIAS, ANEXOS "
+                                                  + "WHERE ARTIGO.Artigo = ARTIGOMOEDA.Artigo AND FAMILIAS.Familia = ARTIGO.Familia AND ANEXOS.Chave = ARTIGO.Artigo");
 
                 while (!objList.NoFim())
                 {
-                    string codFamilia = objList.Valor("Familia");
+                    artigo = new Model.Artigo();
+                    artigo.CodArtigo = objList.Valor("Artigo");
+                    artigo.Descricao = objList.Valor("Descricao");
+                    artigo.Preco = objList.Valor("PVP1");
+                    artigo.IVA = objList.Valor("Iva");
+                    artigo.Familia = objList.Valor("Familia");
+                    artigo.StkAtual = objList.Valor("STKActual");
+                    artigo.Imagem = objList.Valor("Id") + '.' + objList.Valor("FicheiroOrig").Split('.')[1];
+                    artigo.DescricaoImg = objList.Valor("AnexosDesc");
 
-                    if (PriEngine.Engine.Comercial.Familias.Existe(codFamilia) == true)
-                    {
-                        StdBELista objFamilia = PriEngine.Engine.Consulta("SELECT Descricao FROM Familias WHERE Familia = '" + codFamilia + "'");
-
-                        artigo = new Model.Artigo();
-                        artigo.CodArtigo = objList.Valor("Artigo");
-                        artigo.Descricao = objList.Valor("Descricao");
-                        artigo.Preco = objList.Valor("PVP1");
-                        artigo.IVA = objList.Valor("Iva");
-                        artigo.Familia = objFamilia.Valor("Descricao");
-                        artigo.StkAtual = objList.Valor("STKActual");
-
-                        StdBELista anexosList = PriEngine.Engine.Consulta("SELECT Id, FicheiroOrig, Descricao FROM Anexos WHERE Chave = '" + objList.Valor("Artigo") + "'");
-
-                        if (anexosList.NumLinhas() > 0)
-                        {
-                            artigo.Imagem = anexosList.Valor("Id") + '.' + anexosList.Valor("FicheiroOrig").Split('.')[1];
-                            artigo.DescricaoImg = anexosList.Valor("Descricao");
-                        }
-                        else
-                        {
-                            artigo.Imagem = null;
-                            artigo.DescricaoImg = "Sem imagem";
-                        }
-
-                        listArtigos.Add(artigo);
-                        objList.Seguinte();
-
-                    }
+                    listArtigos.Add(artigo);
+                    objList.Seguinte();
                 }
 
                 return listArtigos;
@@ -80,36 +63,19 @@ namespace Warehouse_catalog.Lib_Primavera
 
                 if (PriEngine.Engine.Comercial.Artigos.Existe(codArtigo) == true)
                 {
-                    StdBELista objArtigo = PriEngine.Engine.Consulta("SELECT ARTIGO.Artigo, Descricao, PVP1, Iva, Familia, STKActual FROM ARTIGO, ARTIGOMOEDA WHERE ARTIGO.Artigo = '" + codArtigo + "' AND ARTIGO.Artigo = ARTIGOMOEDA.Artigo");
+                    StdBELista objArtigo = PriEngine.Engine.Consulta("SELECT ARTIGO.Artigo AS Artigo, ARTIGO.Descricao AS Descricao, PVP1, Iva, FAMILIAS.Descricao AS Familia, STKActual, ANEXOS.Id AS Id, ANEXOS.FicheiroOrig AS FicheiroOrig, ANEXOS.Descricao AS AnexosDesc "
+                                                  + "FROM ARTIGO, ARTIGOMOEDA, FAMILIAS, ANEXOS "
+                                                  + "WHERE ARTIGO.Artigo = '" + codArtigo + "' AND ARTIGO.Artigo = ARTIGOMOEDA.Artigo AND FAMILIAS.Familia = ARTIGO.Familia AND ANEXOS.Chave = ARTIGO.Artigo");
 
                     myArtigo.CodArtigo = objArtigo.Valor("Artigo");
                     myArtigo.Descricao = objArtigo.Valor("Descricao");
                     myArtigo.Preco = objArtigo.Valor("PVP1");
                     myArtigo.IVA = objArtigo.Valor("Iva");
                     myArtigo.StkAtual = objArtigo.Valor("STKActual");
-
-                    string codFamilia = objArtigo.Valor("Familia");
-                    if (PriEngine.Engine.Comercial.Familias.Existe(codFamilia) == true)
-                    {
-                        StdBELista objFamilia = PriEngine.Engine.Consulta("SELECT Descricao FROM Familias WHERE Familia = '" + codFamilia + "'");
-
-                        myArtigo.Familia = objFamilia.Valor("Descricao");
-                    }
-
-                    StdBELista anexosList = PriEngine.Engine.Consulta("SELECT Id, FicheiroOrig, Descricao FROM Anexos WHERE Chave = '" + objArtigo.Valor("Artigo") + "'");
-
-                    if (anexosList.NumLinhas() > 0)
-                    {
-                        myArtigo.Imagem = anexosList.Valor("Id") + '.' + anexosList.Valor("FicheiroOrig").Split('.')[1];
-                        myArtigo.DescricaoImg = anexosList.Valor("Descricao");
-                    }
-                    else
-                    {
-                        myArtigo.Imagem = null;
-                        myArtigo.DescricaoImg = "Sem imagem";
-                    }
-
-
+                    myArtigo.Familia = objArtigo.Valor("Familia");
+                    myArtigo.Imagem = objArtigo.Valor("Id") + '.' + objArtigo.Valor("FicheiroOrig").Split('.')[1];
+                    myArtigo.DescricaoImg = objArtigo.Valor("AnexosDesc");
+             
                     return myArtigo;
                 }
                 else
