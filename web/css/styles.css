@@ -92,6 +92,14 @@ body {
 	text-align: left;
 	background: #DDDDDD;
 }
+
+#logoutButton {
+	position: absolute;
+	padding-right: 20px;
+	padding-top: 45px;
+	right:0px;
+}
+
 /* Filter */
 #filter {
 	background: #DDDDDD;

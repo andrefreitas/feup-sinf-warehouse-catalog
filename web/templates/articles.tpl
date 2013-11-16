@@ -18,6 +18,7 @@
     <div id="top-bar">
       <div class="container">
         <img src="images/logo.svg" id="logo" height="100">
+        <a id="logoutButton" href="logout.php"><img src="images/logout.svg" height="25px" /></a>
       </div>
     </div>
     <!-- Content -->
