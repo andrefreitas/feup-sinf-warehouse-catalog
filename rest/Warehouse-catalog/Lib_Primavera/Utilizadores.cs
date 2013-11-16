@@ -13,29 +13,30 @@ namespace Warehouse_catalog.Lib_Primavera
 {
     public class Utilizadores
     {
-        public static bool LoginUtilizador(string email, string password)
+        public static string LoginUtilizador(string email, string password)
         {
             ErpBS objMotor = new ErpBS();
             StdBELista objList;
 
             if (PriEngine.InitializeCompany(ConfigurationConstants.NAME_COMPANY, ConfigurationConstants.USERNAME, ConfigurationConstants.PASSWORD) == true)
             {
-                objList = PriEngine.Engine.Consulta("SELECT CDU_Password FROM Clientes WHERE CDU_Email = '" + email + "'");
+                objList = PriEngine.Engine.Consulta("SELECT Nome, CDU_Password FROM Clientes WHERE CDU_Email = '" + email + "'");
 
                 if (!objList.Vazia())
                 {
                     string bd_password = objList.Valor("CDU_Password");
+                    string bd_nome = objList.Valor("Nome");
 
                     if (bd_password.Equals(Lib_Primavera.PriEngine.Platform.Criptografia.Encripta(password, 30)))
-                        return true;
+                        return bd_nome;
 
-                    return false;
+                    return null;
                 }
 
 
             }
 
-            return false;
+            return null;
         }
 
         public static string MostraPassword(string email)

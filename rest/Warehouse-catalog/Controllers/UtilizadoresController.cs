@@ -43,7 +43,12 @@ namespace Warehouse_catalog.Controllers
             string email = separValue[0];
             string password = separValue[1];
 
-            return Lib_Primavera.Utilizadores.LoginUtilizador(email, password);
+            string username = Lib_Primavera.Utilizadores.LoginUtilizador(email, password);
+
+            if (username != null)
+                return true;
+
+            else return false;
         }
 
         // POST /Utilizadores/
@@ -53,9 +58,11 @@ namespace Warehouse_catalog.Controllers
 
             StatusAnswer toReturn = new StatusAnswer();
 
-            if (Lib_Primavera.Utilizadores.LoginUtilizador(id.email, id.password))
+            string username = Lib_Primavera.Utilizadores.LoginUtilizador(id.email, id.password);
+
+            if (username != null)
             {
-                toReturn.status = "ok";
+                toReturn.status = username;
             }
 
             else

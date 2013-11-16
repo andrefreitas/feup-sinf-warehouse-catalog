@@ -17,8 +17,8 @@
     <!-- Top bar -->
     <div id="top-bar">
       <div class="container">
-        <img src="images/logo.svg" id="logo" height="100">
-        <a id="logoutButton" href="logout.php"><img src="images/logout.svg" height="25px" /></a>
+        <img src="images/logo.svg" id="logo" height="100"/>
+        <span id="logoutButton"><span id="textUsername">{$username_session} </span> <a href="logout.php"> <img src="images/logout.svg" height="25px" /></a></span>
       </div>
     </div>
     <!-- Content -->
