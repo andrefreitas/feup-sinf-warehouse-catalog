@@ -147,7 +147,9 @@ body {
     cursor:pointer;
 }
 
-
+#recoveryPopup {
+	display: none;
+}
 
 /* Responsive */
 @media screen and ( max-width: 800px ) {
