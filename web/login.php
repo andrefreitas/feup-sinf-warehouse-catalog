@@ -1,6 +1,12 @@
 <?php
+	
 	chdir("common");
-    require_once("init.php");
+	require_once("init.php");
 
-    $smarty->display("login.tpl");
+	if(isset($_SESSION['s_username']))
+		header('Location: articles.php');
+
+	else {
+	    $smarty->display("login.tpl");
+	}
 ?>

@@ -1,4 +1,5 @@
 <?php
-	include_once("smarty.php");
+	require_once('session.php');
+	require_once("smarty.php");
 	include_once("rest.php");
 ?>
