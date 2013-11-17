@@ -28,27 +28,22 @@ namespace Warehouse_catalog.Controllers
         //
         // GET: /Utilizadores/
 
-        public bool Get(string id)
+        public StatusAnswer Get(string id)
         {
-            //Aqui o " delimita o email da password
             //O ! substitui o .
 
-            id = id.Replace('!', '.');
+            string temp = id.Replace('!', '.');
 
-            string[] separValue = id.Split('"');
+            string password = Lib_Primavera.Utilizadores.ObterPasswordOriginal(temp);
 
-            if (separValue.Length != 2)
-                return false;
+            StatusAnswer toReturn = new StatusAnswer();
 
-            string email = separValue[0];
-            string password = separValue[1];
+            if (password == null)
+                toReturn.status = "error";
 
-            string username = Lib_Primavera.Utilizadores.LoginUtilizador(email, password);
+            else toReturn.status = password;
 
-            if (username != null)
-                return true;
-
-            else return false;
+            return toReturn;
         }
 
         // POST /Utilizadores/

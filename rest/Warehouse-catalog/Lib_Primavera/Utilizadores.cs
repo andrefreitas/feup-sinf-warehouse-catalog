@@ -58,5 +58,25 @@ namespace Warehouse_catalog.Lib_Primavera
 
             return null;
         }
+
+        public static string ObterPasswordOriginal(string email)
+        {
+            ErpBS objMotor = new ErpBS();
+            StdBELista objList;
+
+            if (PriEngine.InitializeCompany(ConfigurationConstants.NAME_COMPANY, ConfigurationConstants.USERNAME, ConfigurationConstants.PASSWORD) == true)
+            {
+                objList = PriEngine.Engine.Consulta("SELECT CDU_Password FROM Clientes WHERE CDU_Email = '" + email + "'");
+
+                if (!objList.Vazia())
+                {
+                    return Lib_Primavera.PriEngine.Platform.Criptografia.Descripta(objList.Valor("CDU_Password"), 30);
+                }
+
+
+            }
+
+            return null;
+        }
     }
 }
