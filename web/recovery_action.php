@@ -8,7 +8,7 @@
     $password = getJsonResponse($toSend);
 
 	if($password['status'] == 'error') {
-		// put here code for invalid email
+		$_SESSION['s_error'] = "Email incorreto!";
 	}
 
 	else {
@@ -20,6 +20,7 @@
 		$from = "noreply@warehouse-catalog.com";
 		$headers = "From:" . $from;
 		mail($to,$subject,$message,$headers);
+		$_SESSION['s_ok'] = "Email enviado com sucesso!";
 	}
 
 	header('Location: login.php');
