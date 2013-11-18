@@ -151,9 +151,10 @@ body {
 	display: none;
 	background: #FFF;
 	margin: 0 auto;
-	width: 400px;
+	width: 300px;
 	margin-top: 20px;
 	border: solid 3px #262F35;
+	text-align: center;
 
 }
 #recoveryForm{
@@ -162,14 +163,9 @@ body {
 
 .recoveryTitle{
 	color: rgb(118, 118, 118);
-	font-size: 15px;
+	font-size: 18px;
+	font-weight: bold;
 	display: block;
-}
-
-.recoveryText{
-	font-family: Arial,Helvetica;
-	font-size: 12px;
-	color: rgb(118, 118, 118);
 }
 /* Responsive */
 @media screen and ( max-width: 800px ) {

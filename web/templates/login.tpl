@@ -43,11 +43,8 @@
 					<div class="recoveryTitle">Recuperação de Password</div>
 				</div>
 				<div class="form-group">
-					<div class="recoveryText">Introduza o seu email: </div>
+					<input type="email" name="emailToRecover" placeholder="Introduza o seu email..."/>
 				</div>
-				<div class="form-group">
-		       		<input type="email" name="emailToRecover" placeholder="email@domain.com"/>
-		        </div>
 		        <input type="submit" class="btn btn-danger" id="recover" value="Recuperar Password"/>
 		    </form>
 		</div>
