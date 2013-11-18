@@ -17,7 +17,7 @@
 		$to = $_POST['emailToRecover'];
 		$subject = "Warehouse Catalog: Recuperacao de palavra-passe";
 		$message = "Ola!\n\nEnviamos este email na sequencia do seu pedido para recuperacao da palavra-passe.\n\nA sua password e $argMail.\n\n Cumprimentos,\n A Equipa Warehouse Catalog.";
-		$from = "noreply@warehouse-catalog.com";
+		$from = "warehouse.catalog@gmail.com";
 		$headers = "From:" . $from;
 		mail($to,$subject,$message,$headers);
 		$_SESSION['s_ok'] = "Email enviado com sucesso!";
