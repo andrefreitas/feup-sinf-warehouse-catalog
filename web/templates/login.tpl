@@ -10,6 +10,7 @@
 		<script src="js/scripts.js"></script>
 		<script src="js/bPopup.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8"> 
 		<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
 	</head>
 	<body>
