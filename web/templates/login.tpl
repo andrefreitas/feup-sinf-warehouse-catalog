@@ -19,7 +19,9 @@
 				<img src="images/logo.fw.png" />
 			</div>
 			{if $s_error}
-			<div class="alert alert-danger" id="error_message"> {$s_error} </div>
+				<div class="alert alert-danger" id="error_message"> {$s_error} </div>
+			{elseif $s_ok}
+				<div class="alert alert-success" id="success_message"> {$s_ok} </div>
 			{/if}
 			<form id="loginForm" role="form" method="post" action="login_action.php">
 			  <div class="form-group">
