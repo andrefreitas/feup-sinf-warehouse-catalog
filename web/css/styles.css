@@ -151,6 +151,16 @@ body {
 
 #recoveryPopup {
 	display: none;
+	background: #FFF;
+	margin: 0 auto;
+	width: 300px;
+	margin-top: 20px;
+	border: solid 3px #262F35;
+	text-align: center;
+
+}
+#recoveryForm{
+	padding: 20px;
 }
 
 #articlePopup {
@@ -178,6 +188,13 @@ body {
 #articlePopup .head .warehouse,
 #articlePopup .head .stock{
 	background: #DDDDDD;
+}
+
+.recoveryTitle{
+	color: rgb(118, 118, 118);
+	font-size: 18px;
+	font-weight: bold;
+	display: block;
 }
 
 /* Responsive */

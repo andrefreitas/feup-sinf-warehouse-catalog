@@ -10,6 +10,7 @@
 		<script src="js/scripts.js"></script>
 		<script src="js/bPopup.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8"> 
 		<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
 	</head>
 	<body>
@@ -39,8 +40,13 @@
 		</div>
 		<div id="recoveryPopup">
 			<form id="recoveryForm" method="post" action="recovery_action.php">
-		       	<input type="email" name="emailToRecover" placeholder="Introduzir e-mail..."/> <br />
-		        <input type="submit" value="Recuperar"/>
+				<div class="form-group">
+					<div class="recoveryTitle">Recuperação de Password</div>
+				</div>
+				<div class="form-group">
+					<input type="email" name="emailToRecover" placeholder="Introduza o seu email..."/>
+				</div>
+		        <input type="submit" class="btn btn-danger" id="recover" value="Recuperar Password"/>
 		    </form>
 		</div>
 
