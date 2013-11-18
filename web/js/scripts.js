@@ -1,21 +1,5 @@
-$("#myButton").on("click", function(){
-  $.ajax({
-      type : "GET",
-      url: 'http://localhost:49300/api/armazens',
-      dataType: 'jsonp',
-      success: function(dataWeGotViaJsonp){
-          var text = '';
-          var len = dataWeGotViaJsonp.length;
-          for(var i=0;i<len;i++){
-              twitterEntry = dataWeGotViaJsonp[i];
-              text += '<p><img src = "' + twitterEntry.user.profile_image_url_https +'"/>' + twitterEntry['text'] + '</p>'
-          }
-          alert(text);
-      }
-  });
-});
-
 $(document).ready(function() {
+
   $("#recover").click(function() {
     $('#recoveryPopup').bPopup({
       easing: 'easeOutBack', //uses jQuery easing plugin
@@ -23,4 +7,13 @@ $(document).ready(function() {
       transition: 'slideDown'
     });
   });
+
+  $(".article").click(function() {
+    viewArticle(this);
+  });  
 });
+
+function viewArticle(article) {
+  alert("View article");
+
+}

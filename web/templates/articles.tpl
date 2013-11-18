@@ -41,7 +41,7 @@
       <!-- Articles -->
       <div id="articles">
         {foreach $articles as $article}
-          <div class="box article">
+          <div class="box article" id="{$article.CodArtigo}">
             <div class="name">{$article.DescArtigo|truncate:25}</div>
             <div class="pvp">{$article.Preco|truncate:25} €</div>
             <div class="stock"><b>Stock</b> {$article.StkAtual}</div>
