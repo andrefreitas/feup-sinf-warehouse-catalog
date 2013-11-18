@@ -6,6 +6,8 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css"/>
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/bPopup.js"></script>
+    <script src="js/scripts.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
@@ -48,6 +50,35 @@
             <div class="warehouse"><img src="images/icons/warehouse.svg" width="40px">{$article.DescArmazem|truncate:15}</div>
           </div>
         {/foreach}
+      </div>
+    </div>
+
+    <!-- Article Popup -->
+    <div id="articlePopup">
+      <div class="head">
+        <div class="article">Alpinea Rosa</div>
+        <div class="warehouse"><b>Armazém</b><br/>Gaia</div>
+        <div class="stock"></div>
+        <div class="price"></div>
+      </div>
+      <div class="content">
+        <div class="description">
+        </div>
+        <div class="code">
+        </div>
+        <div class="stock">
+        </div>
+        <div class="vat">
+        </div>
+        <div class="warehouses">
+          <div class="warehouse">
+            <div class="name">Gaia</div>
+            <div class="quantity"></div>
+          </div>
+        </div>
+      </div>
+      <div class="close">
+        Fechar
       </div>
     </div>
 

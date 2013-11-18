@@ -14,6 +14,10 @@ $(document).ready(function() {
 });
 
 function viewArticle(article) {
-  alert("View article");
+  $('#articlePopup').bPopup({
+    easing: 'easeOutBack', //uses jQuery easing plugin
+    speed: 450,
+    transition: 'slideDown'
+  });
 
 }

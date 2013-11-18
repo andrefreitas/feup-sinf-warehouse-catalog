@@ -153,6 +153,33 @@ body {
 	display: none;
 }
 
+#articlePopup {
+	display: none;
+	background: white;
+	width: 700px;
+}
+
+#articlePopup .head  {
+	height: 50px ;
+	border-bottom: solid 1px #DDDDDD;
+	overflow: auto;
+}
+
+#articlePopup .head  div{
+	float: left;
+}
+
+#articlePopup .head .article{
+	margin: 0;
+	padding: 10px 0 0 10px;
+	width: 250px;
+}
+
+#articlePopup .head .warehouse,
+#articlePopup .head .stock{
+	background: #DDDDDD;
+}
+
 /* Responsive */
 @media screen and ( max-width: 800px ) {
 
