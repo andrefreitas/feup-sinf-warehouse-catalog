@@ -149,8 +149,28 @@ body {
 
 #recoveryPopup {
 	display: none;
+	background: #FFF;
+	margin: 0 auto;
+	width: 400px;
+	margin-top: 20px;
+	border: solid 3px #262F35;
+
+}
+#recoveryForm{
+	padding: 20px;
 }
 
+.recoveryTitle{
+	color: rgb(118, 118, 118);
+	font-size: 15px;
+	display: block;
+}
+
+.recoveryText{
+	font-family: Arial,Helvetica;
+	font-size: 12px;
+	color: rgb(118, 118, 118);
+}
 /* Responsive */
 @media screen and ( max-width: 800px ) {
 
