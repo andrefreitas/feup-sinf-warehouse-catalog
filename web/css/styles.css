@@ -173,21 +173,56 @@ body {
 	height: 50px ;
 	border-bottom: solid 1px #DDDDDD;
 	overflow: auto;
+	font-size: 17px;
 }
 
 #articlePopup .head  div{
+	float: right;
+	margin:  0;
+	padding: 0;
+}
+
+#articlePopup .head .text{
 	float: left;
+	margin-left: 5px;
+	line-height: 18px;
+	margin-top: 6px;
+}
+
+#articlePopup .head img{
+	float: left;
+	margin-top: 6px;
 }
 
 #articlePopup .head .article{
 	margin: 0;
-	padding: 10px 0 0 10px;
+	padding: 10px 0 0 15px;
 	width: 250px;
+	float: left;
 }
 
 #articlePopup .head .warehouse,
 #articlePopup .head .stock{
 	background: #DDDDDD;
+	width: 180px;
+	padding: 0 20px 0 20px;
+	height: 49px;
+}
+
+#articlePopup .head .stock{
+	width: 120px;
+}
+
+
+#articlePopup .head .price{
+	background: #008BFF;
+	color: #FFF;
+	font-size: 25px;
+	font-weight: bold;
+	height: 49px;
+	padding: 10px;
+	text-align: center;
+	width: 100px;
 }
 
 .recoveryTitle{

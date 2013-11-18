@@ -57,9 +57,12 @@
     <div id="articlePopup">
       <div class="head">
         <div class="article">Alpinea Rosa</div>
-        <div class="warehouse"><b>Armazém</b><br/>Gaia</div>
-        <div class="stock"></div>
-        <div class="price"></div>
+        <div class="price"> 12 &euro;</div>
+        <div class="stock"><b>Stock</b><br/>242</div>
+        <div class="warehouse">
+          <img src="images/icons/warehouse.svg" width="40px">
+          <div class="text"><b>Armazém</b><br/>Gaia</div>
+        </div>
       </div>
       <div class="content">
         <div class="description">
@@ -67,6 +70,7 @@
         <div class="code">
         </div>
         <div class="stock">
+          <b>Stock</b><br/>242
         </div>
         <div class="vat">
         </div>
