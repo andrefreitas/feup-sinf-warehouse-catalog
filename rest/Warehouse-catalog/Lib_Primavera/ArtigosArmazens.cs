@@ -82,7 +82,7 @@ namespace Warehouse_catalog.Lib_Primavera
                 objList = PriEngine.Engine.Consulta(query_artigo);
 
                 while (!objList.NoFim())
-                {
+                { 
                     artigo_armazem = new Model.ArtigoArmazem();
 
                     artigo_armazem.CodArtigo = objList.Valor("Artigo");
