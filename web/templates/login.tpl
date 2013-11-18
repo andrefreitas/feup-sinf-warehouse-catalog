@@ -18,6 +18,9 @@
 			<div id="login-header">
 				<img src="images/logo.fw.png" />
 			</div>
+			{if $s_error}
+			<div class="alert alert-danger" id="error_message"> {$s_error} </div>
+			{/if}
 			<form id="loginForm" role="form" method="post" action="login_action.php">
 			  <div class="form-group">
 			    <label for="exampleInputEmail1">Email</label>
