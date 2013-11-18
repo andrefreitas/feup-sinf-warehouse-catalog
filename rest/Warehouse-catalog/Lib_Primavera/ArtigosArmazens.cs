@@ -35,8 +35,20 @@ namespace Warehouse_catalog.Lib_Primavera
 
                 objList = PriEngine.Engine.Consulta(query);
 
+                List<string> list = new List<string>();
+
                 while (!objList.NoFim())
                 {
+                    string codArtigo = objList.Valor("Artigo");
+
+                    if (list.Contains(codArtigo))
+                    {
+                        objList.Seguinte();
+                        continue;
+                    }
+
+                    list.Add(codArtigo);
+                    
                     artigo_armazem = new Model.ArtigoArmazem();
 
                     artigo_armazem.CodArtigo = objList.Valor("Artigo");
@@ -57,6 +69,28 @@ namespace Warehouse_catalog.Lib_Primavera
                     artigo_armazem.Distrito = objList.Valor("Distrito");
                     artigo_armazem.Pais = objList.Valor("Pais");
                     artigo_armazem.StkArmazem = objList.Valor("ArmStk");
+
+                    listArtigosArmazens.Add(artigo_armazem);
+                    objList.Seguinte();
+                }
+
+                string query_artigo = "SELECT ARTIGO.Artigo AS Artigo, ARTIGO.Descricao AS ArtigoDesc, ARTIGOMOEDA.PVP1 AS Preco, ARTIGO.Iva AS Iva, " 
+                           + "FAMILIAS.Descricao AS Familia, ARTIGO.STKActual AS ArtStk "
+                           + "FROM ARTIGO, ARTIGOMOEDA, FAMILIAS WHERE "
+                           + "ARTIGO.Artigo = ARTIGOMOEDA.Artigo AND FAMILIAS.Familia = ARTIGO.Familia AND ARTIGO.STKActual = 0";
+
+                objList = PriEngine.Engine.Consulta(query_artigo);
+
+                while (!objList.NoFim())
+                { 
+                    artigo_armazem = new Model.ArtigoArmazem();
+
+                    artigo_armazem.CodArtigo = objList.Valor("Artigo");
+                    artigo_armazem.DescArtigo = objList.Valor("ArtigoDesc");
+                    artigo_armazem.Preco = objList.Valor("Preco");
+                    artigo_armazem.IVA = objList.Valor("Iva");
+                    artigo_armazem.Familia = objList.Valor("Familia");
+                    artigo_armazem.StkAtual = objList.Valor("ArtStk");
 
                     listArtigosArmazens.Add(artigo_armazem);
                     objList.Seguinte();
