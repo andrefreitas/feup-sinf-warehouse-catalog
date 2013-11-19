@@ -34,14 +34,27 @@ namespace Warehouse_catalog.Controllers
 
             string temp = id.Replace('!', '.');
 
-            string password = Lib_Primavera.Utilizadores.ObterPasswordOriginal(temp);
-
+            string[] args = temp.Split('=');
             StatusAnswer toReturn = new StatusAnswer();
 
-            if (password == null)
-                toReturn.status = "error";
+            if (args.Length == 2)
+            {
+                string key = args[1];
 
-            else toReturn.status = password;
+                if (key.Equals("BqdNvUKuFTo82lTdQeRuJ1crEvg4ZYt1"))
+                {
+                    string password = Lib_Primavera.Utilizadores.ObterPasswordOriginal(args[0]);
+
+                    if (password == null)
+                        toReturn.status = "error";
+
+                    else toReturn.status = password;
+                }
+
+                else toReturn.status = "error";
+            }
+
+            else toReturn.status = "error";
 
             return toReturn;
         }
