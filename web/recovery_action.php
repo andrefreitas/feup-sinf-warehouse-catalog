@@ -3,11 +3,11 @@
     require_once("init.php");
 
     $temp = str_replace(".", "!", $_POST['emailToRecover']);
-    $toSend = 'localhost:49300/api/utilizadores/' . $temp;
+    $toSend = 'localhost:49300/api/utilizadores/' . $temp . '=BqdNvUKuFTo82lTdQeRuJ1crEvg4ZYt1';
 
-    $password = getJsonResponse($toSend);
+   	$password = getJsonResponse($toSend);
 
-	if($password['status'] == 'error') {
+   	if($password['status'] == 'error') {
 		$_SESSION['s_error'] = "Email incorreto!";
 	}
 
