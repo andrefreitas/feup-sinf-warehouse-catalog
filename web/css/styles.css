@@ -167,6 +167,10 @@ body {
 	display: none;
 	background: white;
 	width: 700px;
+	height: 80%;
+	margin-top: -80%;
+	font-size: 17px;
+	overflow: hidden;
 }
 
 #articlePopup .head  {
@@ -213,6 +217,9 @@ body {
 	width: 120px;
 }
 
+#articlePopup .head .stock img{
+	margin-top: 10px;
+}
 
 #articlePopup .head .price{
 	background: #008BFF;
@@ -220,10 +227,30 @@ body {
 	font-size: 25px;
 	font-weight: bold;
 	height: 49px;
-	padding: 10px;
+	padding: 8px 10px 10px 10px;
 	text-align: center;
 	width: 100px;
 }
+
+
+#articlePopup .content{
+}
+
+#articlePopup .content h1,
+#articlePopup .content b{
+	font-size: 20px;
+	font-weight: bold;
+	margin: 0;
+	padding: 0;
+}
+
+#articlePopup .content div{
+	border-bottom: solid 1px #DDDDDD;
+	overflow: auto;
+	margin-bottom: 5px;
+	padding: 20px;
+}
+
 
 .recoveryTitle{
 	color: rgb(118, 118, 118);
