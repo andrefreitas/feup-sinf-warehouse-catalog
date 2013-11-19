@@ -81,6 +81,34 @@
           <span><b>Unidade:</b> 2 flores</span>
           <span><b>IVA:</b> 23%</span>
         </div>
+        <div class="warehouses">
+
+          <div class="warehouse">
+            <div class="name">
+              <img src="images/icons/warehouse.svg" width="40px">
+              <span>Lordelo</span>
+            </div>
+            <div class="stock">2300</div>
+          </div>
+
+            <div class="warehouse">
+            <div class="name">
+              <img src="images/icons/warehouse.svg" width="40px">
+              <span>Lordelo</span>
+            </div>
+            <div class="stock">2300</div>
+          </div>
+
+                    <div class="warehouse">
+            <div class="name">
+              <img src="images/icons/warehouse.svg" width="40px">
+              <span>Lordelo</span>
+            </div>
+            <div class="stock">2300</div>
+          </div>
+
+
+        </div>
         <div class="closePopup"> <img src="images/icons/close.svg" />Fechar </div>
       </div>
     </div>

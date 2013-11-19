@@ -269,12 +269,56 @@ body {
 	font-size: 25px;
 	padding: 0;
 	cursor: pointer;
+	border-bottom: none;
 }
 
 #articlePopup .closePopup img{
 	height: 35px;
 	width: auto;
 	margin-right: 5px;
+}
+
+#articlePopup .warehouses .warehouse{
+	width: 202px;
+	height: 51px;
+	padding: 0;
+	overflow: hidden;
+	border-bottom: none;
+	float: left;
+	margin-right: 10px;
+}
+
+#articlePopup .warehouses .warehouse div{
+	margin: 0;
+	padding: 0;
+	float: left;
+}
+
+#articlePopup .warehouses .warehouse .name{
+	background: #DDDDDD;
+	width: 130px;
+	height: 50px;
+	padding: 5px 5px 0 10px;
+	overflow: hidden;
+}
+
+#articlePopup .warehouses .warehouse .name img{
+	float: left;
+}
+
+#articlePopup .warehouses .warehouse .name span{
+	float: left;
+	padding: 9px 0 0 0;
+}
+
+#articlePopup .warehouses .warehouse .stock{
+	background: #262f35;
+	color: #FFF;
+	text-align: center;
+	font-weight: bold;
+	padding: 15px 0 0 0;
+	height: 50px;
+	width: 70px;
 }
 
 
