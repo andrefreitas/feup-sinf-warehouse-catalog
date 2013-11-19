@@ -69,31 +69,19 @@
       </div>
       <div class="content">
         <div class="description">
+          <img src="picturesproducts/%7B0CF1F7DF-35D9-11E3-AEE9-080027E4F6E9%7D.jpg" />
           <h1>Descrição</h1>
           Bla bla bla teste 1 2 3 djods jsjdfdfiss df mass ffsfs
           qwuqwuquqw ffdihfds fi sd fsdhiofsdh sfdhifodh isd
           dsifsdh fdsohifds ifodh ofhisdf oif hofdfs ofsdh df
           fdssdfhi fdshio oifdhs fdoih soih odfshi oifsd dfsoi
         </div>
-        <div class="code">
-          <b>Código:</b> ar5rjfjfjfj
+        <div class="info">
+          <span><b>Código:</b> ar5rjfjfjfj</span> 
+          <span><b>Unidade:</b> 2 flores</span>
+          <span><b>IVA:</b> 23%</span>
         </div>
-        <div class="unity">
-          <b>Unidade:</b> 2 flores
-        </div>
-        <div class="vat">
-          <b>IVA:</b> 23%
-        </div>
-        <div class="warehouses">
-          <h1>Armazéns:</h1>
-          <div class="warehouse">
-            <div class="name">Gaia</div>
-            <div class="quantity"></div>
-          </div>
-        </div>
-      </div>
-      <div class="close">
-        Fechar
+        <div class="closePopup"> <img src="images/icons/close.svg" />Fechar </div>
       </div>
     </div>
 

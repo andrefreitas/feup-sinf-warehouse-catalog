@@ -236,12 +236,17 @@ body {
 #articlePopup .content{
 }
 
+#articlePopup .content .description img{
+	width: 150px;
+	height: auto;
+	float: left;
+	margin: 0 10px 0 0;
+}
+
 #articlePopup .content h1,
 #articlePopup .content b{
 	font-size: 20px;
 	font-weight: bold;
-	margin: 0;
-	padding: 0;
 }
 
 #articlePopup .content div{
@@ -249,6 +254,27 @@ body {
 	overflow: auto;
 	margin-bottom: 5px;
 	padding: 20px;
+}
+
+#articlePopup .content .info span{
+	margin-right: 20px;
+}
+
+#articlePopup .closePopup{
+	background: #DDDDDD;
+	text-align: center;
+	width: 100%;
+	position: absolute;
+	bottom: 0px;
+	font-size: 25px;
+	padding: 0;
+	cursor: pointer;
+}
+
+#articlePopup .closePopup img{
+	height: 35px;
+	width: auto;
+	margin-right: 5px;
 }
 
 

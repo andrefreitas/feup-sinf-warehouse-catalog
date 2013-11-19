@@ -11,6 +11,12 @@ $(document).ready(function() {
   $(".article").click(function() {
     viewArticle(this);
   });  
+
+   $("#articlePopup .closePopup").click(function() {
+      $('#articlePopup').bPopup().close();
+      $('#articlePopup').css("display", "none");
+
+    });
 });
 
 function viewArticle(article) {
