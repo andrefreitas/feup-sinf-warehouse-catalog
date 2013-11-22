@@ -56,11 +56,11 @@
     <!-- Article Popup -->
     <div id="articlePopup">
       <div class="head">
-        <div class="article">Alpinea Rosa</div>
-        <div class="price"> 12 &euro;</div>
+        <div class="article"><span id="articleName"></span></div>
+        <div class="price"> <span id="articlePrice"></span> &euro;</div>
         <div class="stock">
           <img src="images/icons/box.svg" width="30px">
-          <div class="text"><b>Stock</b><br/>242</div>
+          <div class="text"><b>Stock</b><br/><span id="articleStock"></span></div>
         </div>
         <div class="warehouse">
           <img src="images/icons/warehouse.svg" width="40px">
@@ -69,17 +69,14 @@
       </div>
       <div class="content">
         <div class="description">
-          <img src="picturesproducts/%7B0CF1F7DF-35D9-11E3-AEE9-080027E4F6E9%7D.jpg" />
+          <img id="articleImage" src="" />
           <h1>Descrição</h1>
-          Bla bla bla teste 1 2 3 djods jsjdfdfiss df mass ffsfs
-          qwuqwuquqw ffdihfds fi sd fsdhiofsdh sfdhifodh isd
-          dsifsdh fdsohifds ifodh ofhisdf oif hofdfs ofsdh df
-          fdssdfhi fdshio oifdhs fdoih soih odfshi oifsd dfsoi
+          <span id="articleDescription"></span>
         </div>
         <div class="info">
-          <span><b>Código:</b> ar5rjfjfjfj</span> 
+          <span><b>Código:</b> <span id="articleCode"></span></span> 
           <span><b>Unidade:</b> 2 flores</span>
-          <span><b>IVA:</b> 23%</span>
+          <span><b>IVA:</b> <span id="articleIVA"></span>%</span>
         </div>
         <div class="warehouses">
 

@@ -5,6 +5,10 @@
     $smarty->setCompileDir("../templates_c/");
 
     // Send error messages to Smarty and delete them
+    if (!isset($_SESSION['s_error']))
+        $_SESSION['s_error'] = "";
+    if (!isset($_SESSION['s_ok']))
+        $_SESSION['s_ok'] = "";
     $smarty->assign("s_error", $_SESSION['s_error']);
     $_SESSION['s_error'] = null;
     

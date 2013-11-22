@@ -1,5 +1,5 @@
 <?php
-function getJsonResponse($service_url){
+function getJsonResponse($service_url, $decode = true){
 	$curl = curl_init($service_url);
 	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 	$curl_response = curl_exec($curl);
@@ -9,11 +9,16 @@ function getJsonResponse($service_url){
 	    die('error occured during curl exec. Additioanl info: ' . var_export($info));
 	}
 	curl_close($curl);
-	$decoded = json_decode($curl_response, true);
-	if (isset($decoded->response->status) && $decoded->response->status == 'ERROR') {
-	    die('error occured: ' . $decoded->response->errormessage);
+	$return;
+	if ($decode){
+		$return = json_decode($curl_response, true);
+		if (isset($return->response->status) && $return->response->status == 'ERROR') {
+			die('error occured: ' . $return->response->errormessage);
+		}
+	}else{
+		$return = $curl_response;
 	}
-	return $decoded;
+	return $return;
 }
 
 function getJsonResponsePost($service_url, $args) {
