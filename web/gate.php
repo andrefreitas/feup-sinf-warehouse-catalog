@@ -9,7 +9,10 @@ switch ($_REQUEST['action']){
 	case "getProductDescription":{
 		if (isset($_REQUEST['productId'])){
 			$response = getJsonResponse("localhost:49300/api/artigos/".str_replace('.', '!', $_REQUEST['productId']));
-			$response = array('status'=>'ok', 'articleDescription'=>$response);
+			$response2 = getJsonResponse("localhost:49300/api/QuantidadeArtigoArmazens/".str_replace('.', '!', $_REQUEST['productId']));			
+			$response = array('status'=>'ok', 
+				'articleDescription'=>$response,
+				'articleWarehouses'=>$response2);
 			echo json_encode($response);
 		}else{
 			echo json_encode(array('status'=>'error', 'reason'=>'Bad Product ID!'));

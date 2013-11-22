@@ -62,10 +62,10 @@
           <img src="images/icons/box.svg" width="30px">
           <div class="text"><b>Stock</b><br/><span id="articleStock"></span></div>
         </div>
-        <div class="warehouse">
+        <!--<div class="warehouse">
           <img src="images/icons/warehouse.svg" width="40px">
           <div class="text"><b>Armazém</b><br/>Gaia</div>
-        </div>
+        </div>-->
       </div>
       <div class="content">
         <div class="description">
@@ -75,36 +75,10 @@
         </div>
         <div class="info">
           <span><b>Código:</b> <span id="articleCode"></span></span> 
-          <span><b>Unidade:</b> 2 flores</span>
+          <!--<span><b>Unidade:</b> 2 flores</span>-->
           <span><b>IVA:</b> <span id="articleIVA"></span>%</span>
         </div>
-        <div class="warehouses">
-
-          <div class="warehouse">
-            <div class="name">
-              <img src="images/icons/warehouse.svg" width="40px">
-              <span>Lordelo</span>
-            </div>
-            <div class="stock">2300</div>
-          </div>
-
-            <div class="warehouse">
-            <div class="name">
-              <img src="images/icons/warehouse.svg" width="40px">
-              <span>Lordelo</span>
-            </div>
-            <div class="stock">2300</div>
-          </div>
-
-                    <div class="warehouse">
-            <div class="name">
-              <img src="images/icons/warehouse.svg" width="40px">
-              <span>Lordelo</span>
-            </div>
-            <div class="stock">2300</div>
-          </div>
-
-
+        <div class="warehouses" id='articleWarehouses'>
         </div>
         <div class="closePopup"> <img src="images/icons/close.svg" />Fechar </div>
       </div>
