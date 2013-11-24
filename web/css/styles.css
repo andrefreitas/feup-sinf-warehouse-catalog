@@ -270,6 +270,7 @@ body {
 	padding: 0;
 	cursor: pointer;
 	border-bottom: none;
+	margin-bottom: 0 !important;
 }
 
 #articlePopup .closePopup img{
