@@ -167,8 +167,8 @@ body {
 	display: none;
 	background: white;
 	width: 700px;
-	height: 80%;
-	margin-top: -80%;
+	height: 600px;
+	margin-top: -1200px;
 	font-size: 17px;
 	overflow: hidden;
 }
