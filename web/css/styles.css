@@ -72,7 +72,7 @@ body {
 	float: right;
 	background: #DDDDDD;
 	height: 100%;
-	min-width: 250px;
+	min-width: 230px;
 	text-align: left;
 }
 
@@ -87,7 +87,7 @@ body {
 	padding-top: 10px;
 }
 .article .stock{
-	width: 150px;
+	width: 120px;
 	float: right;
 	height: 100%;
 	padding: 10px 10px 0 10px;
@@ -176,7 +176,7 @@ body {
 #articlePopup .head  {
 	height: 50px ;
 	border-bottom: solid 1px #DDDDDD;
-	overflow: auto;
+	overflow: hidden;
 	font-size: 17px;
 }
 
@@ -214,7 +214,7 @@ body {
 }
 
 #articlePopup .head .stock{
-	width: 120px;
+	width: 130px;
 }
 
 #articlePopup .head .stock img{
@@ -229,7 +229,7 @@ body {
 	height: 49px;
 	padding: 8px 10px 10px 10px;
 	text-align: center;
-	width: 100px;
+	width: 120px;
 }
 
 
