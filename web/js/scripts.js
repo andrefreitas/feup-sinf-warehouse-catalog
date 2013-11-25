@@ -12,11 +12,6 @@ $(document).ready(function() {
     viewArticle(this);
   });  
 
-  $("#articlePopup .closePopup").click(function() {
-    $('#articlePopup').bPopup().close();
-    $('#articlePopup').css("display", "none");
-
-  });
 });
 
 function viewArticle(article) {
@@ -26,6 +21,7 @@ function viewArticle(article) {
           $("#articlePrice").html(data['articleDescription']['Preco']);
           $("#articleStock").html(data['articleDescription']['StkAtual']);
           $("#articleIVA").html(data['articleDescription']['IVA']);
+          $('#title').html(data['articleDescription']['Descricao']);
           $("#articleDescription").html(data['articleDescription']['Descricao']);
           $("#articleCode").html(data['articleDescription']['CodArtigo']);
           $("#articleImage").attr("src", "picturesproducts/" + data['articleDescription']['Imagem']);
@@ -39,11 +35,7 @@ function viewArticle(article) {
             '</div></div>';
           } 
           $("#articleWarehouses").html(wh);
-          $('#articlePopup').bPopup({
-            easing: 'easeOutBack', //uses jQuery easing plugin
-            speed: 450,
-            transition: 'slideDown'
-          });
+
       }else if (data['status']=='error'){
         alert(data['reason']);
       }

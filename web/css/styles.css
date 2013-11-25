@@ -164,13 +164,7 @@ body {
 }
 
 #articlePopup {
-	display: none;
-	background: white;
-	width: 700px;
-	height: 600px;
-	margin-top: -1200px;
 	font-size: 17px;
-	overflow: hidden;
 }
 
 #articlePopup .head  {
@@ -186,11 +180,10 @@ body {
 	padding: 0;
 }
 
-#articlePopup .head .text{
-	float: left;
+#articlePopup .content .description .text{
 	margin-left: 5px;
-	line-height: 18px;
-	margin-top: 6px;
+	line-height: 28px;
+
 }
 
 #articlePopup .head img{
@@ -203,33 +196,6 @@ body {
 	padding: 10px 0 0 15px;
 	width: 250px;
 	float: left;
-}
-
-#articlePopup .head .warehouse,
-#articlePopup .head .stock{
-	background: #DDDDDD;
-	width: 180px;
-	padding: 0 20px 0 20px;
-	height: 49px;
-}
-
-#articlePopup .head .stock{
-	width: 130px;
-}
-
-#articlePopup .head .stock img{
-	margin-top: 10px;
-}
-
-#articlePopup .head .price{
-	background: #008BFF;
-	color: #FFF;
-	font-size: 25px;
-	font-weight: bold;
-	height: 49px;
-	padding: 8px 10px 10px 10px;
-	text-align: center;
-	width: 120px;
 }
 
 
@@ -288,6 +254,12 @@ body {
 	float: left;
 	margin-right: 10px;
 }
+
+
+#articlePopup .warehouses{
+	border-bottom: none !important;
+}
+
 
 #articlePopup .warehouses .warehouse div{
 	margin: 0;

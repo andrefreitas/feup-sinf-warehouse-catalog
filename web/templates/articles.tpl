@@ -43,8 +43,8 @@
       <!-- Articles -->
       <div id="articles">
         {foreach $articles as $article}
-          <div class="box article" id="{$article.CodArtigo}">
-            <div class="name">{$article.DescArtigo|truncate:25}</div>
+          <div class="box article" data-toggle="modal" data-target="#articlePopup" id="{$article.CodArtigo}">
+            <div class="name" >{$article.DescArtigo|truncate:25}</div>
             <div class="pvp">{$article.Preco|truncate:25} €</div>
             <div class="stock"><b>Stock</b> {$article.StkAtual}</div>
             <div class="warehouse"><img src="images/icons/warehouse.svg" width="40px">{$article.DescArmazem|truncate:15}</div>
@@ -53,8 +53,44 @@
       </div>
     </div>
 
+
+
+    <!-- Article Popup-->
+
+    <!-- Modal -->
+    <div class="modal fade" id="articlePopup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="title"></h4>
+          </div>
+          <div class="modal-body">
+            <div class="content">
+              <div class="description">
+                <img id="articleImage" src="" />
+                <span><b>Preço:</b> <span id="articlePrice" class="text"></span> &euro;</span>
+                <br/>
+                <b>Stock:</b> <span id="articleStock" class="text"></span>
+              </div>
+              <div class="info">
+                  <span><b>Código:</b> <span id="articleCode"></span></span>
+                  <span><b>IVA:</b> <span id="articleIVA"></span>%</span>
+              </div>
+              <div class="warehouses" id='articleWarehouses'>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
     <!-- Article Popup -->
-    <div id="articlePopup">
+    <!--<div id="articlePopup">
       <div class="head">
         <div class="article"><span id="articleName"></span></div>
         <div class="price"> <span id="articlePrice"></span> &euro;</div>
@@ -66,7 +102,7 @@
           <img src="images/icons/warehouse.svg" width="40px">
           <div class="text"><b>Armazém</b><br/>Gaia</div>
         </div>-->
-      </div>
+      <!--</div>
       <div class="content">
         <div class="description">
           <img id="articleImage" src="" />
@@ -76,13 +112,29 @@
         <div class="info">
           <span><b>Código:</b> <span id="articleCode"></span></span> 
           <!--<span><b>Unidade:</b> 2 flores</span>-->
-          <span><b>IVA:</b> <span id="articleIVA"></span>%</span>
+          <!--<span><b>IVA:</b> <span id="articleIVA"></span>%</span>
         </div>
         <div class="warehouses" id='articleWarehouses'>
         </div>
         <div class="closePopup"> <img src="images/icons/close.svg" />Fechar </div>
       </div>
-    </div>
+    </div>-->
+
+    <!--          <div class="content">
+              <div class="description">
+                <img id="articleImage" src="" />
+                <span><b>Preço:</b> <span id="articlePrice"></span> &euro;</div>
+                <img src="images/icons/box.svg" width="30px"><span><b>Stock</b></span> <span id="articleStock"></span>
+
+              </div>
+                <div class="info">
+                  <span><b>Código:</b> <span id="articleCode"></span></span>
+                  <span><b>IVA:</b> <span id="articleIVA"></span>%</span>
+                </div>
+              </div>
+              <div class="warehouses" id='articleWarehouses'>
+              </div>
+          </div>-->
 
   </body>
 </html>
