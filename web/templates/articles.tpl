@@ -6,7 +6,6 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css"/>
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-    <script src="js/bPopup.js"></script>
     <script src="js/scripts.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -47,7 +46,7 @@
             <div class="name" >{$article.DescArtigo|truncate:25}</div>
             <div class="pvp">{$article.Preco|truncate:25} €</div>
             <div class="stock"><b>Stock</b> {$article.StkAtual}</div>
-            <div class="warehouse"><img src="images/icons/warehouse.svg" width="40px">{$article.DescArmazem|truncate:15}</div>
+            <div class="warehouse1"><img src="images/icons/warehouse.svg" width="40px">{$article.DescArmazem|truncate:15}</div>
           </div>
         {/foreach}
       </div>
@@ -69,9 +68,9 @@
             <div class="content">
               <div class="description">
                 <img id="articleImage" src="" />
-                <span><b>Preço:</b> <span id="articlePrice" class="text"></span> &euro;</span>
+                <span class="text"><b>Preço:</b> <span id="articlePrice"></span> &euro;</span>
                 <br/>
-                <b>Stock:</b> <span id="articleStock" class="text"></span>
+                <span class="text"><b>Stock:</b> <span id="articleStock"></span></span>
               </div>
               <div class="info">
                   <span><b>Código:</b> <span id="articleCode"></span></span>

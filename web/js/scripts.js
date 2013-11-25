@@ -10,7 +10,13 @@ $(document).ready(function() {
 
   $(".article").click(function() {
     viewArticle(this);
-  });  
+  });
+
+   $(".warehouse").click(function() {
+    viewWarehouse(this);
+  });
+
+  window.onload = loadScript;
 
 });
 
@@ -40,4 +46,52 @@ function viewArticle(article) {
         alert(data['reason']);
       }
     });
+  }
+
+function viewWarehouse(warehouse) {
+  $.getJSON( "gate.php?action=getWarehouseDescription&warehouseId="+warehouse.id, function( data ) {
+    if (data['status']=='ok'){
+        $("#warehouseDesc").html(data['warehouseDescription']['Descricao']);
+        $("#warehouseMorada").html(data['warehouseDescription']['Morada']);
+        $("#warehouseCodPost").html(data['warehouseDescription']['CodPostal']);
+        $("#warehouseLocal").html(data['warehouseDescription']['Localidade']);
+        $('#title').html(data['warehouseDescription']['Descricao']);
+        $("#warehouseTelef").html(data['warehouseDescription']['Telefone']);
+        $("#warehouseFax").html(data['warehouseDescription']['Fax']);
+        $("#warehouseDistr").html(data['warehouseDescription']['Distrito']);
+        $("#warehousePais").html(data['warehouseDescription']['Pais']);
+        $("#warehouseCod").html(data['warehouseDescription']['CodArmazem']);
+        /*wh = "";
+        for (i=0; i<data['articleWarehouses'].length;i++){
+          wh +=
+          '<div class="warehouse"><div class="name"><img src="images/icons/warehouse.svg" width="40px"><span>'
+          +data['articleWarehouses'][i]['Localidade']
+          +'</span></div><div class="stock">'
+          +data['articleWarehouses'][i]['StkArmazem']+
+          '</div></div>';
+        } 
+        $("#articleWarehouses").html(wh);*/
+
+    }else if (data['status']=='error'){
+      alert(data['reason']);
+    }
+  });
+}
+
+function initialize() {
+  var mapOptions = {
+    zoom: 8,
+    center: new google.maps.LatLng(-34.397, 150.644)
+  };
+
+  var map = new google.maps.Map(document.getElementById('map-canvas'),
+      mapOptions);
+}
+
+function loadScript() {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&' +
+      'callback=initialize';
+  document.body.appendChild(script);
 }

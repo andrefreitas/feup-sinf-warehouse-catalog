@@ -19,6 +19,17 @@ if(isset($_SESSION['s_username'])) {
 			}
 			break;
 		}
+		case "getWarehouseDescription": {
+			if (isset($_REQUEST['warehouseId'])){
+				$response = getJsonResponse("localhost:49300/api/armazens/".str_replace('.', '!', $_REQUEST['warehouseId']));			
+				$response = array('status'=>'ok', 
+					'warehouseDescription'=>$response);
+				echo json_encode($response);
+			}else{
+				echo json_encode(array('status'=>'error', 'reason'=>'Bad Warehouse ID!'));
+			}
+			break;
+		}
 		default:
 		echo json_encode(array('status'=>'error', 'reason'=>'No Action Set!'));
 		break;

@@ -67,7 +67,7 @@ body {
 	padding: 10px 5px 10px 15px;
 }
 
-.article .warehouse{
+.article .warehouse1{
 	padding: 6px 5px 0px 15px;
 	float: right;
 	background: #DDDDDD;
@@ -94,6 +94,44 @@ body {
 	text-align: left;
 	background: #DDDDDD;
 }
+
+#warehouses{
+	padding-top: 10px;
+}
+.warehouse {
+	margin-top: 20px;
+	font-size: 20px;
+	cursor: pointer;
+	overflow: auto;
+}
+.warehouse div{
+	float: left;
+	text-align: center;
+}
+.warehouse .description{
+	padding: 10px 5px 10px 15px;
+}
+
+.warehouse .phone{
+	padding: 6px 5px 0px 15px;
+	float: right;
+	background: #DDDDDD;
+	height: 100%;
+	min-width: 180px;
+	text-align: left;
+}
+
+.warehouse .distance{
+	float: right;
+	background: #008BFF;
+	width: 100px;
+	height: 100%;
+	color: #fff;
+	font-size: 22px;
+	font-weight: bold;
+	padding-top: 10px;
+}
+
 
 #logoutButton {
 	position: absolute;
@@ -163,6 +201,22 @@ body {
 	padding: 20px;
 }
 
+#warehousePopup {
+	font-size: 17px;
+}
+
+#warehousePopup .content .description .text{
+	margin-left: 5px;
+	line-height: 28px;
+
+}
+
+#warehousePopup .content div{
+	border-bottom: solid 1px #DDDDDD;
+	margin-bottom: 5px;
+	padding: 10px;
+}
+
 #articlePopup {
 	font-size: 17px;
 }
@@ -182,6 +236,7 @@ body {
 
 #articlePopup .content .description .text{
 	margin-left: 5px;
+	padding-left: 20px;
 	line-height: 28px;
 
 }
@@ -294,6 +349,9 @@ body {
 	width: 70px;
 }
 
+#map-canvas {
+	height: 300px;
+}
 
 .recoveryTitle{
 	color: rgb(118, 118, 118);
