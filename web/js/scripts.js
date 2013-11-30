@@ -16,6 +16,10 @@ $(document).ready(function() {
     viewWarehouse(this);
   });
 
+   $("#showArtWarehouse").click(function() {
+    goToArticlesWarehouse();
+   });
+
   window.onload = loadScript;
 
 });
@@ -61,16 +65,20 @@ function viewWarehouse(warehouse) {
         $("#warehouseDistr").html(data['warehouseDescription']['Distrito']);
         $("#warehousePais").html(data['warehouseDescription']['Pais']);
         $("#warehouseCod").html(data['warehouseDescription']['CodArmazem']);
-        /*wh = "";
-        for (i=0; i<data['articleWarehouses'].length;i++){
-          wh +=
-          '<div class="warehouse"><div class="name"><img src="images/icons/warehouse.svg" width="40px"><span>'
-          +data['articleWarehouses'][i]['Localidade']
-          +'</span></div><div class="stock">'
-          +data['articleWarehouses'][i]['StkArmazem']+
-          '</div></div>';
-        } 
-        $("#articleWarehouses").html(wh);*/
+
+        geocoder.geocode({ 'address': data['warehouseDescription']['Morada']}, function(results, status) { 
+
+             if (status == google.maps.GeocoderStatus.OK) {
+                map.setCenter(results[0].geometry.location);
+
+                var marker = new google.maps.Marker({  map: map,  position: results[0].geometry.location });
+                alert('aqui');
+             }
+
+             else{
+                alert("Geocode was not successful for the following reason: " + status);
+             }
+        });
 
     }else if (data['status']=='error'){
       alert(data['reason']);
@@ -86,6 +94,8 @@ function initialize() {
 
   var map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
+
+  var geocoder = new google.maps.Geocoder();
 }
 
 function loadScript() {
@@ -95,3 +105,8 @@ function loadScript() {
       'callback=initialize';
   document.body.appendChild(script);
 }
+
+function goToArticlesWarehouse() {
+    var warehouseCode = $('#warehouseCod').text();
+    window.location.replace("articles.php?warehouse=" + warehouseCode);
+  }
