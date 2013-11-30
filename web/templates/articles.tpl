@@ -18,11 +18,11 @@
     <!-- Top bar -->
     <div id="top-bar">
       <div class="container"> 
-        <img src="images/logo.svg" id="logo1" height="100"/>
-        <span id="logo"><a href="logout.php"> <img src="images/icons/logout-menu.png"/></span>
-        <span id="logo"><img src="images/icons/home.png"/></span>
-        <span id="logo"><img src="images/icons/produtos-menu.png"/></span>
-        <span id="logo"><img src="images/icons/warehouse-menu.png"/></span>
+        <span id="logo1"><a><img src="images/logo.svg" /><br/>&nbsp;</a></span>
+        <span id="logo"><a href="logout.php"><img src="images/icons/logout-menu.png"/><br/>Log Out</a></span>
+        <span id="logo"><a href="logout.php"><img src="images/icons/home.png"/><br/>Home</a></span>
+        <span id="logo"><a href="logout.php"><img src="images/icons/produtos-menu.png"/><br/>Produtos</a></span>
+        <span id="logo"><a href="logout.php"><img src="images/icons/warehouse-menu.png"/><br/>Armazens</a></span>
       </div>
     </div>
     <!-- Content -->
