@@ -37,15 +37,16 @@ body {
 }
 
 #top-bar #logo1 img {
-	height: 120px;
+	height: 80px;
 }
 
 #top-bar #logo1{
 	display: inline-block;
 	border-left: none;
+	vertical-align: top;
 	margin-top: 0px;
 	height: 137px;
-	padding: 10px 5px 10px 5px;
+	padding: 30px 5px 10px 5px;
 	font-weight: bold;
 	font-size: 0px;
 }
