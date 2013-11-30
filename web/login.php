@@ -3,7 +3,7 @@
 	chdir("common");
 	require_once("init.php");
 
-	if(isset($_SESSION['s_username']))
+	if(isset($_SESSION['s_username']) && $_SESSION['s_username'] != "")
 		header('Location: articles.php');
 
 	else {

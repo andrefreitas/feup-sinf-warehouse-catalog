@@ -10,13 +10,18 @@ $(document).ready(function() {
 
   $(".article").click(function() {
     viewArticle(this);
-  });  
-
-  $("#articlePopup .closePopup").click(function() {
-    $('#articlePopup').bPopup().close();
-    $('#articlePopup').css("display", "none");
-
   });
+
+   $(".warehouse").click(function() {
+    viewWarehouse(this);
+  });
+
+   $("#showArtWarehouse").click(function() {
+    goToArticlesWarehouse();
+   });
+
+  window.onload = loadScript;
+
 });
 
 function viewArticle(article) {
@@ -26,6 +31,7 @@ function viewArticle(article) {
           $("#articlePrice").html(data['articleDescription']['Preco']);
           $("#articleStock").html(data['articleDescription']['StkAtual']);
           $("#articleIVA").html(data['articleDescription']['IVA']);
+          $('#title').html(data['articleDescription']['Descricao']);
           $("#articleDescription").html(data['articleDescription']['Descricao']);
           $("#articleCode").html(data['articleDescription']['CodArtigo']);
           $("#articleImage").attr("src", "picturesproducts/" + data['articleDescription']['Imagem']);
@@ -52,4 +58,63 @@ function viewArticle(article) {
         alert(data['reason']);
       }
     });
+  }
+
+function viewWarehouse(warehouse) {
+  $.getJSON( "gate.php?action=getWarehouseDescription&warehouseId="+warehouse.id, function( data ) {
+    if (data['status']=='ok'){
+        $("#warehouseDesc").html(data['warehouseDescription']['Descricao']);
+        $("#warehouseMorada").html(data['warehouseDescription']['Morada']);
+        $("#warehouseCodPost").html(data['warehouseDescription']['CodPostal']);
+        $("#warehouseLocal").html(data['warehouseDescription']['Localidade']);
+        $('#title').html(data['warehouseDescription']['Descricao']);
+        $("#warehouseTelef").html(data['warehouseDescription']['Telefone']);
+        $("#warehouseFax").html(data['warehouseDescription']['Fax']);
+        $("#warehouseDistr").html(data['warehouseDescription']['Distrito']);
+        $("#warehousePais").html(data['warehouseDescription']['Pais']);
+        $("#warehouseCod").html(data['warehouseDescription']['CodArmazem']);
+
+        geocoder.geocode({ 'address': data['warehouseDescription']['Morada']}, function(results, status) { 
+
+             if (status == google.maps.GeocoderStatus.OK) {
+                map.setCenter(results[0].geometry.location);
+
+                var marker = new google.maps.Marker({  map: map,  position: results[0].geometry.location });
+                alert('aqui');
+             }
+
+             else{
+                alert("Geocode was not successful for the following reason: " + status);
+             }
+        });
+
+    }else if (data['status']=='error'){
+      alert(data['reason']);
+    }
+  });
 }
+
+function initialize() {
+  var mapOptions = {
+    zoom: 8,
+    center: new google.maps.LatLng(-34.397, 150.644)
+  };
+
+  var map = new google.maps.Map(document.getElementById('map-canvas'),
+      mapOptions);
+
+  var geocoder = new google.maps.Geocoder();
+}
+
+function loadScript() {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&' +
+      'callback=initialize';
+  document.body.appendChild(script);
+}
+
+function goToArticlesWarehouse() {
+    var warehouseCode = $('#warehouseCod').text();
+    window.location.replace("articles.php?warehouse=" + warehouseCode);
+  }

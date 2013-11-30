@@ -71,7 +71,7 @@ body {
 	padding: 10px 5px 10px 15px;
 }
 
-.article .warehouse{
+.article .warehouse1{
 	padding: 6px 5px 0px 15px;
 	float: right;
 	background: #DDDDDD;
@@ -98,6 +98,44 @@ body {
 	text-align: left;
 	background: #DDDDDD;
 }
+
+#warehouses{
+	padding-top: 10px;
+}
+.warehouse {
+	margin-top: 20px;
+	font-size: 20px;
+	cursor: pointer;
+	overflow: auto;
+}
+.warehouse div{
+	float: left;
+	text-align: center;
+}
+.warehouse .description{
+	padding: 10px 5px 10px 15px;
+}
+
+.warehouse .phone{
+	padding: 6px 5px 0px 15px;
+	float: right;
+	background: #DDDDDD;
+	height: 100%;
+	min-width: 180px;
+	text-align: left;
+}
+
+.warehouse .distance{
+	float: right;
+	background: #008BFF;
+	width: 100px;
+	height: 100%;
+	color: #fff;
+	font-size: 22px;
+	font-weight: bold;
+	padding-top: 10px;
+}
+
 
 #logoutButton {
 	
@@ -164,14 +202,24 @@ body {
 	padding: 20px;
 }
 
-#articlePopup {
-	display: none;
-	background: white;
-	width: 700px;
-	height: 600px;
-	margin-top: -1200px;
+#warehousePopup {
 	font-size: 17px;
-	overflow: hidden;
+}
+
+#warehousePopup .content .description .text{
+	margin-left: 5px;
+	line-height: 28px;
+
+}
+
+#warehousePopup .content div{
+	border-bottom: solid 1px #DDDDDD;
+	margin-bottom: 5px;
+	padding: 10px;
+}
+
+#articlePopup {
+	font-size: 17px;
 }
 
 #articlePopup .head  {
@@ -187,11 +235,11 @@ body {
 	padding: 0;
 }
 
-#articlePopup .head .text{
-	float: left;
+#articlePopup .content .description .text{
 	margin-left: 5px;
-	line-height: 18px;
-	margin-top: 6px;
+	padding-left: 20px;
+	line-height: 28px;
+
 }
 
 #articlePopup .head img{
@@ -204,33 +252,6 @@ body {
 	padding: 10px 0 0 15px;
 	width: 250px;
 	float: left;
-}
-
-#articlePopup .head .warehouse,
-#articlePopup .head .stock{
-	background: #DDDDDD;
-	width: 180px;
-	padding: 0 20px 0 20px;
-	height: 49px;
-}
-
-#articlePopup .head .stock{
-	width: 130px;
-}
-
-#articlePopup .head .stock img{
-	margin-top: 10px;
-}
-
-#articlePopup .head .price{
-	background: #008BFF;
-	color: #FFF;
-	font-size: 25px;
-	font-weight: bold;
-	height: 49px;
-	padding: 8px 10px 10px 10px;
-	text-align: center;
-	width: 120px;
 }
 
 
@@ -290,6 +311,12 @@ body {
 	margin-right: 10px;
 }
 
+
+#articlePopup .warehouses{
+	border-bottom: none !important;
+}
+
+
 #articlePopup .warehouses .warehouse div{
 	margin: 0;
 	padding: 0;
@@ -323,6 +350,9 @@ body {
 	width: 70px;
 }
 
+#map-canvas {
+	height: 300px;
+}
 
 .recoveryTitle{
 	color: rgb(118, 118, 118);
