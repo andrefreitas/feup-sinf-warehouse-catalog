@@ -155,13 +155,13 @@ body {
 	text-align: left;
 }
 
-.warehouse .distance{
+.warehouse .city{
 	float: right;
 	background: #008BFF;
-	width: 100px;
+	width: 160px;
 	height: 100%;
 	color: #fff;
-	font-size: 22px;
+	font-size: 18px;
 	font-weight: bold;
 	padding-top: 10px;
 }
