@@ -18,7 +18,7 @@
     <!-- Top bar -->
     <div id="top-bar">
       <div class="container"> 
-        <img src="images/logo.svg" id="logo" height="100"/>
+        <img src="images/logo.svg" id="logo1" height="100"/>
         <span id="logoutButton"><a href="logout.php"> <img src="images/icons/logout-menu.png" id="logo"/></span>
         <img src="images/icons/home.png" id="logo"/>
         <img src="images/icons/produtos-menu.png" id="logo"/>
@@ -45,7 +45,7 @@
       <!-- Articles -->
       <div id="articles">
         {foreach $articles as $article}
-          <div class="box article" data-toggle="modal" data-target="#articlePopup" id="{$article.CodArtigo}">
+          <div class="box article" data-toggle="modal" id="{$article.CodArtigo}">
             <div class="name" >{$article.DescArtigo|truncate:25}</div>
             <div class="pvp">{$article.Preco|truncate:25} €</div>
             <div class="stock"><b>Stock</b> {$article.StkAtual}</div>

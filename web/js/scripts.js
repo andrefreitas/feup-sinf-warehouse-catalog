@@ -47,13 +47,8 @@ function viewArticle(article) {
           $("#articleWarehouses").html(wh);
           var T = $(window).height() / 2 + $(window).scrollTop(),
                 L = $(window).width() / 2 ;
-          $('#articlePopup').bPopup({
-            easing: 'easeOutBack', //uses jQuery easing plugin
-            speed: 450,
-            transition: 'slideDown',
-            follow: [true, true]
+          $('#articlePopup').modal('show');
 
-          });
       }else if (data['status']=='error'){
         alert(data['reason']);
       }

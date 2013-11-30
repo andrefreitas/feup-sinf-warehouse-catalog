@@ -21,7 +21,6 @@ body {
 }
 
 /* Top Bar */
-
 #top-bar{
 	position: fixed;
 	width: 100%;
@@ -30,6 +29,13 @@ body {
 	border-bottom: solid 8px #262F35;
 	text-align: center;
 	margin-bottom: 0px;
+}
+
+#top-bar #logo1 {
+	border-left: none;
+	margin-top: 0px;
+	height: 127px;
+	padding: 10px 5px 10px 5px;
 }
 
 #top-bar #logo {
