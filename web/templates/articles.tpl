@@ -37,7 +37,7 @@
       <div id="articles">
         {foreach $articles as $article}
           <div class="box article" data-toggle="modal" id="{$article.CodArtigo}">
-            <div class="name" >{$article.DescArtigo|truncate:25}</div>
+            <div class="name" >{$article.DescArtigo|truncate:20}</div>
             <div class="pvp">{$article.Preco|truncate:25} €</div>
             <div class="stock"><b>Stock</b> {$article.StkAtual}</div>
             <div class="warehouse1"><img src="images/icons/warehouse.svg" width="40px">{$article.DescArmazem|truncate:15}</div>
