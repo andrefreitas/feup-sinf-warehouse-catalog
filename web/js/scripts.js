@@ -39,10 +39,14 @@ function viewArticle(article) {
             '</div></div>';
           } 
           $("#articleWarehouses").html(wh);
+          var T = $(window).height() / 2 + $(window).scrollTop(),
+                L = $(window).width() / 2 ;
           $('#articlePopup').bPopup({
             easing: 'easeOutBack', //uses jQuery easing plugin
             speed: 450,
-            transition: 'slideDown'
+            transition: 'slideDown',
+            follow: [true, true]
+
           });
       }else if (data['status']=='error'){
         alert(data['reason']);

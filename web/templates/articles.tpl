@@ -18,9 +18,12 @@
   <body>
     <!-- Top bar -->
     <div id="top-bar">
-      <div class="container">
+      <div class="container"> 
         <img src="images/logo.svg" id="logo" height="100"/>
-        <span id="logoutButton"><a href="logout.php"> <img src="images/logout.svg" height="25px" /></a></span>
+        <span id="logoutButton"><a href="logout.php"> <img src="images/icons/logout-menu.png" id="logo"/></span>
+        <img src="images/icons/home.png" id="logo"/>
+        <img src="images/icons/produtos-menu.png" id="logo"/>
+        <img src="images/icons/warehouse-menu.png" id="logo"/>
       </div>
     </div>
     <!-- Content -->
