@@ -61,6 +61,7 @@ function viewArticle(article) {
 
 var geocoder;
 var map;
+var marker;
 function viewWarehouse(warehouse) {
   $.getJSON( "gate.php?action=getWarehouseDescription&warehouseId="+warehouse.id, function( data ) {
     if (data['status']=='ok'){
@@ -79,9 +80,9 @@ function viewWarehouse(warehouse) {
         geocoder.geocode({ 'address': data['warehouseDescription']['Morada']+"'"+data['warehouseDescription']['Localidade']+','+data['warehouseDescription']['CodPostal']}, function(results, status) { 
 
              if (status == google.maps.GeocoderStatus.OK) {
-                map.setCenter(results[0].geometry.location);
-
-                var marker = new google.maps.Marker({  map: map,  position: results[0].geometry.location });
+                marker = new google.maps.Marker({  map: map,  position: results[0].geometry.location });
+                map.setCenter(marker.getPosition());
+                map.setCenter(marker.getPosition());  
              }
 
              else{
@@ -90,6 +91,7 @@ function viewWarehouse(warehouse) {
         });
         google.maps.event.addListenerOnce(map, 'idle', function() {
           google.maps.event.trigger(map, 'resize');
+          map.setCenter(marker.getPosition());
         });
         $('#warehousePopup').modal('show');
     }else if (data['status']=='error'){
