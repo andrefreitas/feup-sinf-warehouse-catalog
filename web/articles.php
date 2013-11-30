@@ -9,6 +9,7 @@
     $valuesSet = false;
 
     if(isset($_SESSION['s_username'])) {
+        $smarty->assign("page", "articles");
         $smarty->assign("username_session", "");//$_SESSION['s_username']);
         $warehouses = getJsonResponse('localhost:49300/api/armazens');
         $smarty->assign("warehouses", $warehouses); 

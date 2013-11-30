@@ -58,6 +58,7 @@ body {
 	display: inline-block;
 	border-left: solid 1px #000000;
 	margin-top: 0px;
+	margin-right: 0px;
 	height: 137px;
 	padding: 10px 5px 10px 5px;
 	font-weight: bold;
@@ -65,7 +66,7 @@ body {
 }
 
 .selected{
-	background-color: 
+	background-color: #262F35;
 }
 
 /* Container */

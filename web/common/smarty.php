@@ -15,4 +15,5 @@
     // Send ok messages to Smarty and delete them
     $smarty->assign("s_ok", $_SESSION['s_ok']);
     $_SESSION['s_ok'] = null;
+    $smarty->assign("page", "");
 ?>
