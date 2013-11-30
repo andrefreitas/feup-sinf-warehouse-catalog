@@ -74,8 +74,9 @@ function viewWarehouse(warehouse) {
         $("#warehouseDistr").html(data['warehouseDescription']['Distrito']);
         $("#warehousePais").html(data['warehouseDescription']['Pais']);
         $("#warehouseCod").html(data['warehouseDescription']['CodArmazem']);
-
-        geocoder.geocode({ 'address': data['warehouseDescription']['Morada']}, function(results, status) { 
+        if (typeof geocoder != 'undefined' && typeof map != 'undefined')
+          initialize();
+        geocoder.geocode({ 'address': data['warehouseDescription']['Morada']+"'"+data['warehouseDescription']['Localidade']+','+data['warehouseDescription']['CodPostal']}, function(results, status) { 
 
              if (status == google.maps.GeocoderStatus.OK) {
                 map.setCenter(results[0].geometry.location);
@@ -86,6 +87,9 @@ function viewWarehouse(warehouse) {
              else{
                 alert("Geocode was not successful for the following reason: " + status);
              }
+        });
+        google.maps.event.addListenerOnce(map, 'idle', function() {
+          google.maps.event.trigger(map, 'resize');
         });
         $('#warehousePopup').modal('show');
     }else if (data['status']=='error'){
