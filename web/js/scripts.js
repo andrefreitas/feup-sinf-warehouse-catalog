@@ -49,6 +49,9 @@ function viewArticle(article) {
             '</div></div>';
           } 
           $("#articleWarehouses").html(wh);
+          var T = $(window).height() / 2 + $(window).scrollTop(),
+                L = $(window).width() / 2 ;
+          $('#articlePopup').modal('show');
 
       }else if (data['status']=='error'){
         alert(data['reason']);

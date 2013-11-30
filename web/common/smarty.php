@@ -11,7 +11,7 @@
         $_SESSION['s_ok'] = "";
     $smarty->assign("s_error", $_SESSION['s_error']);
     $_SESSION['s_error'] = null;
-    
+
     // Send ok messages to Smarty and delete them
     $smarty->assign("s_ok", $_SESSION['s_ok']);
     $_SESSION['s_ok'] = null;

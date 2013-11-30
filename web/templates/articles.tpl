@@ -17,9 +17,12 @@
   <body>
     <!-- Top bar -->
     <div id="top-bar">
-      <div class="container">
-        <img src="images/logo.svg" id="logo" height="100"/>
-        <span id="logoutButton"><a href="logout.php"> <img src="images/logout.svg" height="25px" /></a></span>
+      <div class="container"> 
+        <span id="logo1"><a><img src="images/logo.svg" /><br/>&nbsp;</a></span>
+        <span id="logo"><a href="logout.php"><img src="images/icons/logout-menu.png"/><br/>Log Out</a></span>
+        <span id="logo"><a href="index.php"><img src="images/icons/home.png"/><br/>Home</a></span>
+        <span id="logo"><a href="articles.php"><img src="images/icons/produtos-menu.png"/><br/>Produtos</a></span>
+        <span id="logo"><a href="warehouses.php"><img src="images/icons/warehouse-menu.png"/><br/>Armazens</a></span>
       </div>
     </div>
     <!-- Content -->
@@ -42,7 +45,7 @@
       <!-- Articles -->
       <div id="articles">
         {foreach $articles as $article}
-          <div class="box article" data-toggle="modal" data-target="#articlePopup" id="{$article.CodArtigo}">
+          <div class="box article" data-toggle="modal" id="{$article.CodArtigo}">
             <div class="name" >{$article.DescArtigo|truncate:25}</div>
             <div class="pvp">{$article.Preco|truncate:25} €</div>
             <div class="stock"><b>Stock</b> {$article.StkAtual}</div>

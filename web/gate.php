@@ -1,7 +1,7 @@
 <?php
 chdir("common");
 require_once("init.php");
-if(isset($_SESSION['s_username'])) {
+//if(isset($_SESSION['s_username'])) {
 	if (!isset($_REQUEST['action']))
 		$_REQUEST['action'] = "";
 
@@ -34,7 +34,7 @@ if(isset($_SESSION['s_username'])) {
 		echo json_encode(array('status'=>'error', 'reason'=>'No Action Set!'));
 		break;
 	}
-}else{
-	header('Location: login.php');
-}
+//}else{
+//	echo json_encode(array('status'=>'error', 'reason'=>'Not Logged In!'));
+//}
 ?>
