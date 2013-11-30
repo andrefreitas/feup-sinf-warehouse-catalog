@@ -20,6 +20,10 @@ $(document).ready(function() {
     goToArticlesWarehouse();
    });
 
+   $("#filterButton").click(function() {
+    callFilteredPage();
+   });
+
   window.onload = loadScript;
 
 });
@@ -110,3 +114,10 @@ function goToArticlesWarehouse() {
     var warehouseCode = $('#warehouseCod').text();
     window.location.replace("articles.php?warehouse=" + warehouseCode);
   }
+
+function callFilteredPage() {
+
+  var newPage = "articles.php?";
+
+  window.location.replace(newPage);
+}

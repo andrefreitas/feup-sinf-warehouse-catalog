@@ -27,7 +27,7 @@
       <!-- Filter -->
       <div class="box" id="filter">
         <div class="icon">
-          <img src="images/icons/settings.svg" width="33" height="33">
+          <img src="images/icons/settings.svg" width="33" height="33" data-toggle="modal" data-target="#configurationPopup"/>
         </div>
         <div id="parameters">
           Armazém:
@@ -87,53 +87,60 @@
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 
+     <!-- Configuration Popup-->
 
-    <!-- Article Popup -->
-    <!--<div id="articlePopup">
-      <div class="head">
-        <div class="article"><span id="articleName"></span></div>
-        <div class="price"> <span id="articlePrice"></span> &euro;</div>
-        <div class="stock">
-          <img src="images/icons/box.svg" width="30px">
-          <div class="text"><b>Stock</b><br/><span id="articleStock"></span></div>
-        </div>
-        <!--<div class="warehouse">
-          <img src="images/icons/warehouse.svg" width="40px">
-          <div class="text"><b>Armazém</b><br/>Gaia</div>
-        </div>-->
-      <!--</div>
-      <div class="content">
-        <div class="description">
-          <img id="articleImage" src="" />
-          <h1>Descrição</h1>
-          <span id="articleDescription"></span>
-        </div>
-        <div class="info">
-          <span><b>Código:</b> <span id="articleCode"></span></span> 
-          <!--<span><b>Unidade:</b> 2 flores</span>-->
-          <!--<span><b>IVA:</b> <span id="articleIVA"></span>%</span>
-        </div>
-        <div class="warehouses" id='articleWarehouses'>
-        </div>
-        <div class="closePopup"> <img src="images/icons/close.svg" />Fechar </div>
-      </div>
-    </div>-->
-
-    <!--          <div class="content">
+    <!-- Modal -->
+    <div class="modal fade" id="configurationPopup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Filtrar</h4>
+          </div>
+          <div class="modal-body">
+            <div class="content">
               <div class="description">
-                <img id="articleImage" src="" />
-                <span><b>Preço:</b> <span id="articlePrice"></span> &euro;</div>
-                <img src="images/icons/box.svg" width="30px"><span><b>Stock</b></span> <span id="articleStock"></span>
+                <span class="text">
+                  Armazém:
+                  <select id="warehouseSelected">
+                    <option {if $selected eq 'none'}selected{/if} value="none">Qualquer um</option>
+                    {foreach from=$warehouses item=warehouse}
+                      <option {if $selected eq $warehouse.CodArmazem}selected{/if} value="{$warehouse.CodArmazem}">{$warehouse.Descricao}</option>
+                    {/foreach}
+                  </select>
+                </span>
+              </div>
+              <div class="info">
+                <span class="text">
+                  Preço entre 
+                  <select id="lowerPrice">
 
+                  </select> e 
+                  <select id="higherPrice">
+
+                  </select>
+                </span>
               </div>
-                <div class="info">
-                  <span><b>Código:</b> <span id="articleCode"></span></span>
-                  <span><b>IVA:</b> <span id="articleIVA"></span>%</span>
-                </div>
+              <div class="info">
+                <span class="text">
+                  Stock entre
+                  <select id="lowerStock">
+
+                  </select> e 
+                  <select id="higherStock">
+                  
+                  </select> 
+                </span>
               </div>
-              <div class="warehouses" id='articleWarehouses'>
-              </div>
-          </div>-->
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button id="filterButton" type="button" class="btn btn-primary">Filtrar</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 
   </body>
 </html>
