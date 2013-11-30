@@ -15,13 +15,7 @@
     <meta charset="utf-8">
   </head>
   <body>
-    <!-- Top bar -->
-    <div id="top-bar">
-      <div class="container">
-        <img src="images/logo.svg" id="logo" height="100"/>
-        <span id="logoutButton"><a href="logout.php"> <img src="images/logout.svg" height="25px" /></a></span>
-      </div>
-    </div>
+    {include file='topbar.tpl'}
     <!-- Content -->
     <div class="container">
       <!-- Filter -->
