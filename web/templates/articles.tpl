@@ -114,10 +114,14 @@
                 <span class="text">
                   Preço entre 
                   <select id="lowerPrice">
-
+                    {foreach $priceValues as $price}
+                      <option value="{$price}">{$price}</option>
+                    {/foreach}
                   </select> e 
                   <select id="higherPrice">
-
+                    {foreach $priceValues as $price}
+                     <option value="{$price}">{$price}</option>
+                     {/foreach}
                   </select>
                 </span>
               </div>
@@ -125,10 +129,14 @@
                 <span class="text">
                   Stock entre
                   <select id="lowerStock">
-
+                    {foreach $stockValues as $stock}
+                      <option value="{$stock}">{$stock}</option>
+                    {/foreach}
                   </select> e 
                   <select id="higherStock">
-                  
+                    {foreach $stockValues as $stock}
+                      <option value="{$stock}">{$stock}</option>
+                    {/foreach}
                   </select> 
                 </span>
               </div>
