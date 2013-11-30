@@ -19,10 +19,10 @@
     <div id="top-bar">
       <div class="container"> 
         <img src="images/logo.svg" id="logo1" height="100"/>
-        <span id="logoutButton"><a href="logout.php"> <img src="images/icons/logout-menu.png" id="logo"/></span>
-        <img src="images/icons/home.png" id="logo"/>
-        <img src="images/icons/produtos-menu.png" id="logo"/>
-        <img src="images/icons/warehouse-menu.png" id="logo"/>
+        <span id="logo"><a href="logout.php"> <img src="images/icons/logout-menu.png"/></span>
+        <span id="logo"><img src="images/icons/home.png"/></span>
+        <span id="logo"><img src="images/icons/produtos-menu.png"/></span>
+        <span id="logo"><img src="images/icons/warehouse-menu.png"/></span>
       </div>
     </div>
     <!-- Content -->
