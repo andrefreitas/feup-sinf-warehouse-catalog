@@ -118,12 +118,12 @@
                   Preço entre 
                   <select id="lowerPrice">
                     {foreach $priceValues as $price}
-                      <option value="{$price}">{$price}</option>
+                      <option {if $price eq $lPrice} selected {/if} value="{$price}">{$price}</option>
                     {/foreach}
                   </select> e 
                   <select id="higherPrice">
                     {foreach $priceValues as $price}
-                     <option value="{$price}">{$price}</option>
+                     <option {if $price eq $hPrice} selected {/if} value="{$price}">{$price}</option>
                      {/foreach}
                   </select>
                 </span>
@@ -133,12 +133,12 @@
                   Stock entre
                   <select id="lowerStock">
                     {foreach $stockValues as $stock}
-                      <option value="{$stock}">{$stock}</option>
+                      <option {if $stock eq $lStock} selected {/if} value="{$stock}">{$stock}</option>
                     {/foreach}
                   </select> e 
                   <select id="higherStock">
                     {foreach $stockValues as $stock}
-                      <option value="{$stock}">{$stock}</option>
+                      <option {if $stock eq $hStock} selected {/if} value="{$stock}">{$stock}</option>
                     {/foreach}
                   </select> 
                 </span>

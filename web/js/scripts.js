@@ -122,5 +122,14 @@ function callFilteredPage() {
 
   var newPage = "articles.php?";
 
+  var warehouseSelected = $('#warehouseSelected').val();
+  var lowerPrice = $('#lowerPrice').val();
+  var higherPrice = $('#higherPrice').val();
+  var lowerStock = $('#lowerStock').val();
+  var higherStock = $('#higherStock').val();
+
+  newPage = newPage + "warehouse=" + warehouseSelected + "&lowerPrice=" + lowerPrice + "&higherPrice=" + higherPrice + 
+    "&lowerStock=" + lowerStock + "&higherStock=" + higherStock;
+
   window.location.replace(newPage);
 }
