@@ -247,6 +247,25 @@ body {
 	padding: 10px;
 }
 
+
+
+#configurationPopup {
+	font-size: 17px;
+}
+
+#configurationPopup .content .description .text{
+	margin-left: 5px;
+	line-height: 28px;
+
+}
+
+#configurationPopup .content div{
+	border-bottom: solid 1px #DDDDDD;
+	margin-bottom: 5px;
+	padding: 10px;
+}
+
+
 #articlePopup {
 	font-size: 17px;
 }

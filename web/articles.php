@@ -19,6 +19,59 @@
             
         }
         $smarty->assign("articles", $warehousesWithArticles);
+        $minValue = 1000000;
+        $maxValue = 0;
+        $minStock = 1000000;
+        $maxStock = 0;
+
+        $articles = getJsonResponse('localhost:49300/api/artigos');
+
+        foreach($articles as $article) {
+            $value = $article['Preco'];
+            $stock = $article['StkAtual'];
+
+            if($value < $minValue)
+                $minValue = $value;
+
+            if($value > $maxValue)
+                $maxValue = $value;
+
+            if($stock < $minStock)
+                $minStock = $stock;
+
+            if($stock > $maxStock)
+                $maxStock = $stock;
+        }
+
+        $minValue = floor($minValue);
+        $maxValue = ceil($maxValue);
+        $minStock = floor($minStock);
+        $maxStock = ceil($maxStock);
+
+        $deltaValue = ($maxValue - $minValue) / 10;
+        $deltaStock = ($maxStock - $minStock) / 10;
+
+        $tempValue = $minValue;
+
+        $arrayValues = array();
+
+        while($tempValue <= $maxValue) {
+            array_push($arrayValues, $tempValue);
+            $tempValue = $tempValue + $deltaValue;
+        }
+
+        $tempStock = $minStock;
+
+        $arrayStocks = array();
+
+        while($tempStock <= $maxStock) {
+            array_push($arrayStocks, $tempStock);
+            $tempStock = $tempStock + $deltaStock;
+        }
+
+        $smarty->assign("priceValues", $arrayValues);
+        $smarty->assign("stockValues", $arrayStocks);
+
         $smarty->display("articles.tpl");
     }
 
