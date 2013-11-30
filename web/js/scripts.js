@@ -59,6 +59,8 @@ function viewArticle(article) {
     });
   }
 
+var geocoder;
+var map;
 function viewWarehouse(warehouse) {
   $.getJSON( "gate.php?action=getWarehouseDescription&warehouseId="+warehouse.id, function( data ) {
     if (data['status']=='ok'){
@@ -79,14 +81,13 @@ function viewWarehouse(warehouse) {
                 map.setCenter(results[0].geometry.location);
 
                 var marker = new google.maps.Marker({  map: map,  position: results[0].geometry.location });
-                alert('aqui');
              }
 
              else{
                 alert("Geocode was not successful for the following reason: " + status);
              }
         });
-
+        $('#warehousePopup').modal('show');
     }else if (data['status']=='error'){
       alert(data['reason']);
     }
@@ -99,16 +100,16 @@ function initialize() {
     center: new google.maps.LatLng(-34.397, 150.644)
   };
 
-  var map = new google.maps.Map(document.getElementById('map-canvas'),
+  map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
 
-  var geocoder = new google.maps.Geocoder();
+  geocoder = new google.maps.Geocoder();
 }
 
 function loadScript() {
   var script = document.createElement('script');
   script.type = 'text/javascript';
-  script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&' +
+  script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDLosVe-YFQJuS037lmic-R3lB84sHiZ7k&v=3.exp&sensor=false&' +
       'callback=initialize';
   document.body.appendChild(script);
 }

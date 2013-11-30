@@ -27,7 +27,7 @@
       <!-- Articles -->
       <div id="warehouses">
         {foreach $warehouses as $warehouse}
-          <div class="box warehouse" data-toggle="modal" data-target="#warehousePopup" id="{$warehouse.CodArmazem}">
+          <div class="box warehouse" id="{$warehouse.CodArmazem}">
             <div class="description" >{$warehouse.Descricao|truncate:40}</div>
             <div class="distance"> 10 km </div>
             <div class="phone"><img src="images/icons/phone.svg" width="40px">{$warehouse.Telefone|truncate:15}</div>
