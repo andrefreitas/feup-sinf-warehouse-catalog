@@ -9,7 +9,6 @@
 	);
 
 	$response = getJsonResponsePost($url, $fields);
-
 	if($response['status'] != 'error') {
 		$_SESSION['s_username'] = $response['status'];
 		header('Location: articles.php');

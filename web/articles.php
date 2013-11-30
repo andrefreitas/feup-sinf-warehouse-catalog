@@ -6,7 +6,7 @@
 
     //var_dump($decoded);
 
-    //if(isset($_SESSION['s_username'])) {
+    if(isset($_SESSION['s_username'])) {
         $smarty->assign("username_session", "");//$_SESSION['s_username']);
         $warehouses = getJsonResponse('localhost:49300/api/armazens');
         $smarty->assign("warehouses", $warehouses); 
@@ -20,7 +20,7 @@
         }
         $smarty->assign("articles", $warehousesWithArticles);
         $smarty->display("articles.tpl");
-    //}
+    }
 
-    //else header('Location: login.php');
+    else header('Location: login.php');
 ?>
