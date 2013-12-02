@@ -42,11 +42,11 @@ function viewArticle(article) {
           wh = "";
           for (i=0; i<data['articleWarehouses'].length;i++){
             wh +=
-            '<div class="warehouse"><div class="name"><img src="images/icons/warehouse.svg" width="40px"><span>'
-            +data['articleWarehouses'][i]['Localidade']
+            '<a href="articles.php?warehouse='+data['articleWarehouses'][i]['CodArmazem']+'"><div class="warehouse"><div class="name"><img src="images/icons/warehouse.svg" width="40px"><span>'
+            +data['articleWarehouses'][i]['Descricao']
             +'</span></div><div class="stock">'
             +data['articleWarehouses'][i]['StkArmazem']+
-            '</div></div>';
+            '</div></div></a>';
           } 
           $("#articleWarehouses").html(wh);
           var T = $(window).height() / 2 + $(window).scrollTop(),
