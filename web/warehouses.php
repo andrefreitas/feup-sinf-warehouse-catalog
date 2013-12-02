@@ -9,7 +9,7 @@
     if(isset($_SESSION['s_username'])) {
         $smarty->assign("page", "warehouses");
         $smarty->assign("username_session", $_SESSION['s_username']);
-        $warehouses = getJsonResponse('localhost:49300/api/armazens');
+        $warehouses = getJsonResponse('localhost/Primavera/api/armazens');
         $smarty->assign("warehouses", $warehouses);
 
 
