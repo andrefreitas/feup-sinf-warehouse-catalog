@@ -176,6 +176,11 @@ a:hover {
 	padding-top: 10px;
 }
 
+.warehouse .name span{
+	color:black;
+	padding: 5px 0px 0px 9px !important;
+}
+
 
 #logoutButton {
 	
@@ -361,7 +366,7 @@ a:hover {
 }
 
 #articlePopup .warehouses .warehouse{
-	width: 202px;
+	width: 100%;
 	height: 51px;
 	padding: 0;
 	overflow: hidden;
@@ -384,7 +389,7 @@ a:hover {
 
 #articlePopup .warehouses .warehouse .name{
 	background: #DDDDDD;
-	width: 130px;
+	width: 85%;
 	height: 50px;
 	padding: 5px 5px 0 10px;
 	overflow: hidden;
@@ -404,7 +409,7 @@ a:hover {
 	color: #FFF;
 	text-align: center;
 	font-weight: bold;
-	padding: 15px 0 0 0;
+	padding: 10px 0 0 0;
 	height: 50px;
 	width: 70px;
 }

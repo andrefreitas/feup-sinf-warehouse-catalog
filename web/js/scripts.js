@@ -43,7 +43,7 @@ function viewArticle(article) {
           for (i=0; i<data['articleWarehouses'].length;i++){
             wh +=
             '<a href="articles.php?warehouse='+data['articleWarehouses'][i]['CodArmazem']+'"><div class="warehouse"><div class="name"><img src="images/icons/warehouse.svg" width="40px"><span>'
-            +data['articleWarehouses'][i]['Descricao']
+            +data['articleWarehouses'][i]['Localidade']
             +'</span></div><div class="stock">'
             +data['articleWarehouses'][i]['StkArmazem']+
             '</div></div></a>';
