@@ -2,7 +2,7 @@
 	chdir("common");
     require_once("init.php");
 
-    $url = 'http://localhost/Primavera/api/utilizadores';
+    $url = 'http://'.$REST_URL.'/api/utilizadores';
 	$fields = array(
 		'email' => $_POST['email'],
 		'password' => $_POST['password']

@@ -3,7 +3,7 @@
     require_once("init.php");
 
     $temp = str_replace(".", "!", $_POST['emailToRecover']);
-    $toSend = 'localhost/Primavera/api/utilizadores/' . $temp . '=BqdNvUKuFTo82lTdQeRuJ1crEvg4ZYt1';
+    $toSend = $REST_URL.'/api/utilizadores/' . $temp . '=BqdNvUKuFTo82lTdQeRuJ1crEvg4ZYt1';
 
    	$password = getJsonResponse($toSend);
 

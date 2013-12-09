@@ -11,7 +11,7 @@
     if(isset($_SESSION['s_username'])) {
         $smarty->assign("page", "articles");
         $smarty->assign("username_session", "");//$_SESSION['s_username']);
-        $warehouses = getJsonResponse('localhost/Primavera/api/armazens');
+        $warehouses = getJsonResponse($REST_URL.'/api/armazens');
         $smarty->assign("warehouses", $warehouses); 
         if (isset($_REQUEST['warehouse']) && $_REQUEST['warehouse']!="none"){
             if(isset($_REQUEST['lowerPrice']) && isset($_REQUEST['higherPrice']) && isset($_REQUEST['lowerStock']) && isset($_REQUEST['higherStock'])) {
@@ -21,7 +21,7 @@
                 $hStock = $_REQUEST['higherStock'];
 
                 if($lPrice <= $hPrice && $lStock <= $hStock) {
-                    $tempWarehousesWithArticles = getJsonResponse('localhost/Primavera/api/artigosarmazens/'.$_REQUEST['warehouse']);
+                    $tempWarehousesWithArticles = getJsonResponse($REST_URL.'/api/artigosarmazens/'.$_REQUEST['warehouse']);
                     $smarty->assign("selected", $_REQUEST['warehouse']);
                     $warehousesWithArticles = array();
 
@@ -41,17 +41,17 @@
                 }
 
                 else {
-                    $warehousesWithArticles = getJsonResponse('localhost/Primavera/api/artigosarmazens/'.$_REQUEST['warehouse']);
+                    $warehousesWithArticles = getJsonResponse($REST_URL.'/api/artigosarmazens/'.$_REQUEST['warehouse']);
                     $smarty->assign("selected", $_REQUEST['warehouse']);
                 }
             }
 
             else {
-                $warehousesWithArticles = getJsonResponse('localhost/Primavera/api/artigosarmazens/'.$_REQUEST['warehouse']);
+                $warehousesWithArticles = getJsonResponse($REST_URL.'/api/artigosarmazens/'.$_REQUEST['warehouse']);
                 $smarty->assign("selected", $_REQUEST['warehouse']);
             }
         }else{
-            $warehousesWithArticles = getJsonResponse('localhost/Primavera/api/artigosarmazens');
+            $warehousesWithArticles = getJsonResponse($REST_URL.'/api/artigosarmazens');
             $smarty->assign("selected", 'none');
             
         }
@@ -61,7 +61,7 @@
         $minStock = 1000000;
         $maxStock = 0;
 
-        $articles = getJsonResponse('localhost/Primavera/api/artigos');
+        $articles = getJsonResponse($REST_URL.'/api/artigos');
 
         foreach($articles as $article) {
             $value = $article['Preco'];
