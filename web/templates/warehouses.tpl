@@ -18,12 +18,6 @@
     {include file='topbar.tpl'}
     <!-- Content -->
     <div class="container">
-      <!-- Filter -->
-      <div class="box" id="filter">
-        <div class="icon">
-          <img src="images/icons/settings.svg" width="33" height="33">
-        </div>
-      </div>
       <!-- Articles -->
       <div id="warehouses">
         {foreach $warehouses as $warehouse}
